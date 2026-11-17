@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallCorp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="tableCorp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="600" height="400" fill="url(#wallCorp)"/>
+  
+  <!-- Architectural Wood Paneling Accent on Wall -->
+  <rect x="0" y="0" width="120" height="400" fill="#E2E8F0" opacity="0.6"/>
+  <rect x="480" y="0" width="120" height="400" fill="#E2E8F0" opacity="0.6"/>
+  
+  <!-- Floor line -->
+  <path d="M 0 320 L 600 320 L 600 400 L 0 400 Z" fill="#CBD5E1"/>
+
+  <!-- Installed 86" Smart Board on Wall -->
+  <rect x="140" y="40" width="320" height="190" rx="6" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <rect x="146" y="46" width="308" height="178" rx="4" fill="#002B9A"/>
+  
+  <!-- Content on screen -->
+  <text x="300" y="100" font-family="Manrope, sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" text-anchor="middle">PT PERTAMINA (PERSERO) / BUMN</text>
+  <text x="300" y="125" font-family="Poppins, sans-serif" font-size="11" fill="#93C5FD" text-anchor="middle">Ruang Rapat Direksi &amp; Dewan Komisaris</text>
+  <!-- Screen dashboard lines -->
+  <rect x="170" y="145" width="70" height="45" rx="4" fill="#FFFFFF" fill-opacity="0.15"/>
+  <rect x="250" y="145" width="100" height="45" rx="4" fill="#FFFFFF" fill-opacity="0.15"/>
+  <rect x="360" y="145" width="70" height="45" rx="4" fill="#FFFFFF" fill-opacity="0.15"/>
+
+  <!-- Conference Table -->
+  <path d="M 80 400 L 160 300 L 440 300 L 520 400 Z" fill="url(#tableCorp)"/>
+  
+  <!-- Executive Chairs silhouettes -->
+  <circle cx="240" cy="285" r="14" fill="#0F172A"/>
+  <circle cx="300" cy="285" r="14" fill="#0F172A"/>
+  <circle cx="360" cy="285" r="14" fill="#0F172A"/>
+
+  <!-- Watermark badge -->
+  <g transform="translate(20, 20)">
+    <rect width="180" height="32" rx="6" fill="#002B9A"/>
+    <text x="90" y="21" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" text-anchor="middle">BUMN CORPORATE PROJECT</text>
+  </g>
+</svg>

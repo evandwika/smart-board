@@ -1,0 +1,6 @@
+# Robots.txt for Cahaya Mustika Smart Board
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://cahayamustika.com/sitemap.xml

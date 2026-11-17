@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sb65Screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#071B5A"/>
+    </linearGradient>
+    <filter id="shadow65" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#002B9A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Trolley Base -->
+  <path d="M 200 410 L 230 330 L 370 330 L 400 410 Z" fill="#1E293B"/>
+  <ellipse cx="195" cy="415" rx="15" ry="6" fill="#0F172A"/>
+  <ellipse cx="405" cy="415" rx="15" ry="6" fill="#0F172A"/>
+  <rect x="285" y="270" width="30" height="70" fill="#334155" rx="4"/>
+
+  <!-- Screen Outer Bezel -->
+  <rect x="70" y="50" width="460" height="260" rx="12" fill="#0F172A" stroke="#334155" stroke-width="2" filter="url(#shadow65)"/>
+  <rect x="78" y="58" width="444" height="236" rx="6" fill="url(#sb65Screen)"/>
+
+  <!-- On Screen Visual -->
+  <text x="100" y="100" font-family="Manrope, sans-serif" font-weight="800" font-size="18" fill="#FFFFFF">SMART BOARD 65"</text>
+  <text x="100" y="125" font-family="Poppins, sans-serif" font-size="12" fill="#93C5FD">Ideal untuk Ruang Meeting Kecil &amp; Huddle Room</text>
+
+  <!-- Graphics on screen -->
+  <rect x="100" y="150" width="180" height="90" rx="8" fill="#FFFFFF" fill-opacity="0.08" stroke="#38BDF8" stroke-width="1"/>
+  <circle cx="130" cy="180" r="14" fill="#38BDF8" fill-opacity="0.2"/>
+  <text x="123" y="185" font-family="Manrope, sans-serif" font-weight="700" font-size="12" fill="#38BDF8">4K</text>
+  <text x="155" y="184" font-family="Poppins, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF">Ultra HD 3840x2160</text>
+  <text x="110" y="222" font-family="Poppins, sans-serif" font-size="10" fill="#CBD5E1">40-Touch Points • Dual OS Slot</text>
+
+  <rect x="295" y="150" width="180" height="90" rx="8" fill="#FFFFFF" fill-opacity="0.08" stroke="#10B981" stroke-width="1"/>
+  <text x="310" y="180" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="#10B981">Rekomendasi Kapasitas:</text>
+  <text x="310" y="202" font-family="Poppins, sans-serif" font-weight="600" font-size="14" fill="#FFFFFF">4 - 10 Peserta</text>
+  <text x="310" y="222" font-family="Poppins, sans-serif" font-size="10" fill="#94A3B8">Jarak pandang ideal 2-4 meter</text>
+
+  <!-- Bottom soundbar & logo -->
+  <rect x="78" y="294" width="444" height="16" fill="#070D1E" rx="2"/>
+  <circle cx="95" cy="302" r="3" fill="#10B981"/>
+  <text x="260" y="304" font-family="Manrope, sans-serif" font-weight="700" font-size="8" fill="#64748B">CAHAYA MUSTIKA 65-IFP</text>
+
+  <!-- Size Badge Overlay -->
+  <g transform="translate(420, 35)">
+    <rect width="90" height="32" rx="16" fill="#002B9A" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="45" y="21" font-family="Manrope, sans-serif" font-weight="800" font-size="13" fill="#FFFFFF" text-anchor="middle">65 INCH</text>
+  </g>
+</svg>

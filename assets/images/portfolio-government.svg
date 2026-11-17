@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGov" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020817"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Command Center Room Theme -->
+  <rect width="600" height="400" fill="url(#wallGov)"/>
+
+  <!-- Giant Wall Display (Smart Board 98" Dual Setup) -->
+  <rect x="70" y="40" width="460" height="240" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="76" y="46" width="448" height="228" rx="4" fill="#030712"/>
+
+  <!-- Command Map & GIS Visuals -->
+  <text x="300" y="80" font-family="Manrope, sans-serif" font-weight="800" font-size="14" fill="#38BDF8" text-anchor="middle">COMMAND CENTER &amp; SITUATION ROOM PEMDA</text>
+  <text x="300" y="100" font-family="Poppins, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Pengadaan Resmi E-Katalog LKPP RI</text>
+
+  <!-- Mini Map vector -->
+  <path d="M 120 150 Q 180 120 240 160 T 360 140 T 460 170" fill="none" stroke="#2563EB" stroke-width="3"/>
+  <circle cx="240" cy="160" r="5" fill="#EF4444"/>
+  <circle cx="360" cy="140" r="5" fill="#10B981"/>
+  <circle cx="180" cy="135" r="4" fill="#F59E0B"/>
+
+  <!-- Live Metrics boxes on wall display -->
+  <rect x="100" y="190" width="90" height="50" rx="4" fill="#1E293B"/>
+  <text x="145" y="212" font-family="Manrope, sans-serif" font-weight="700" font-size="14" fill="#38BDF8" text-anchor="middle">99.8%</text>
+  <text x="145" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">SLA Server</text>
+
+  <rect x="210" y="190" width="90" height="50" rx="4" fill="#1E293B"/>
+  <text x="255" y="212" font-family="Manrope, sans-serif" font-weight="700" font-size="14" fill="#10B981" text-anchor="middle">38 Kab/Kota</text>
+  <text x="255" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">CCTV Terkoneksi</text>
+
+  <rect x="320" y="190" width="180" height="50" rx="4" fill="#1E293B"/>
+  <text x="410" y="212" font-family="Manrope, sans-serif" font-weight="700" font-size="12" fill="#F59E0B" text-anchor="middle">Tanggap Bencana Live</text>
+  <text x="410" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#94A3B8" text-anchor="middle">Touch Annotation Ready</text>
+
+  <!-- Operator Console Table -->
+  <rect x="120" y="320" width="360" height="50" rx="6" fill="#1E293B"/>
+  <circle cx="240" cy="310" r="12" fill="#334155"/>
+  <circle cx="360" cy="310" r="12" fill="#334155"/>
+
+  <!-- Badge -->
+  <g transform="translate(20, 20)">
+    <rect width="180" height="32" rx="6" fill="#002B9A"/>
+    <text x="90" y="21" font-family="Manrope, sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" text-anchor="middle">INSTANSI PEMERINTAH / LKPP</text>
+  </g>
+</svg>

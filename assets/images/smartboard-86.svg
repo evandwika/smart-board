@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sb86Screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020B1F"/>
+      <stop offset="100%" stop-color="#001F6E"/>
+    </linearGradient>
+    <filter id="shadow86" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#002B9A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Heavy Duty Trolley Base -->
+  <path d="M 160 420 L 200 310 L 400 310 L 440 420 Z" fill="#1E293B"/>
+  <ellipse cx="155" cy="425" rx="18" ry="7" fill="#0F172A"/>
+  <ellipse cx="445" cy="425" rx="18" ry="7" fill="#0F172A"/>
+  <!-- Dual Column Legs -->
+  <rect x="260" y="250" width="30" height="70" fill="#334155" rx="3"/>
+  <rect x="310" y="250" width="30" height="70" fill="#334155" rx="3"/>
+
+  <!-- Screen Outer Bezel -->
+  <rect x="35" y="30" width="530" height="300" rx="14" fill="#0A0F1D" stroke="#334155" stroke-width="2" filter="url(#shadow86)"/>
+  <rect x="43" y="38" width="514" height="274" rx="8" fill="url(#sb86Screen)"/>
+
+  <!-- Top Camera Bar -->
+  <rect x="235" y="32" width="130" height="11" rx="4" fill="#050811"/>
+  <circle cx="300" cy="37" r="3" fill="#38BDF8"/>
+
+  <!-- On Screen Visual -->
+  <text x="70" y="80" font-family="Manrope, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF">SMART BOARD 86" FLAGSHIP</text>
+  <text x="70" y="105" font-family="Poppins, sans-serif" font-size="12" fill="#BAE6FD">Boardroom Direksi, Laboratorium Riset &amp; Gedung Diklat</text>
+
+  <!-- Spec cards -->
+  <rect x="70" y="125" width="220" height="115" rx="8" fill="#FFFFFF" fill-opacity="0.08" stroke="#38BDF8" stroke-width="1"/>
+  <text x="86" y="155" font-family="Manrope, sans-serif" font-weight="700" font-size="12" fill="#38BDF8">Spesifikasi Monster:</text>
+  <text x="86" y="175" font-family="Poppins, sans-serif" font-size="11" fill="#FFFFFF">• 86 Inch Anti-Glare 7H Mohs</text>
+  <text x="86" y="193" font-family="Poppins, sans-serif" font-size="11" fill="#FFFFFF">• OPS PC Intel Core i7 16GB</text>
+  <text x="86" y="211" font-family="Poppins, sans-serif" font-size="11" fill="#FFFFFF">• Dual Pen Simultaneous Write</text>
+  <text x="86" y="228" font-family="Poppins, sans-serif" font-size="10" fill="#93C5FD">• Built-in Soundbar Subwoofer 40W</text>
+
+  <rect x="305" y="125" width="225" height="115" rx="8" fill="#FFFFFF" fill-opacity="0.08" stroke="#F59E0B" stroke-width="1"/>
+  <text x="320" y="155" font-family="Manrope, sans-serif" font-weight="700" font-size="12" fill="#F59E0B">Kapasitas &amp; Instalasi:</text>
+  <text x="320" y="175" font-family="Poppins, sans-serif" font-weight="600" font-size="13" fill="#FFFFFF">25 - 50+ Peserta</text>
+  <text x="320" y="195" font-family="Poppins, sans-serif" font-size="11" fill="#FFFFFF">Jarak Pandang: 5 - 10 Meter</text>
+  <text x="320" y="213" font-family="Poppins, sans-serif" font-size="10" fill="#CBD5E1">Termasuk Pemasangan &amp; Kalibrasi</text>
+  <text x="320" y="228" font-family="Poppins, sans-serif" font-size="10" fill="#FEF08A">Gratis Training Operator &amp; Sertifikat</text>
+
+  <!-- Bottom soundbar -->
+  <rect x="43" y="312" width="514" height="20" fill="#050811" rx="3"/>
+  <circle cx="65" cy="322" r="3.5" fill="#10B981"/>
+  <text x="300" y="324" font-family="Manrope, sans-serif" font-weight="700" font-size="8.5" fill="#94A3B8" text-anchor="middle">CAHAYA MUSTIKA 86-ULTRA ENTERPRISE</text>
+
+  <!-- Badge -->
+  <g transform="translate(425, 20)">
+    <rect width="120" height="34" rx="17" fill="#002B9A" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="60" y="22" font-family="Manrope, sans-serif" font-weight="800" font-size="12" fill="#FFFFFF" text-anchor="middle">ENTERPRISE 86"</text>
+  </g>
+</svg>
