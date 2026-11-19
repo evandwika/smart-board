@@ -1,25 +1,23 @@
-/**
+﻿/**
  * CAHAYA MUSTIKA - SMART BOARD OFFICIAL SCRIPT
- * Features: Responsive Navbar, Smart Board Room Size Recommendation Calculator,
- * Product Catalog Filters, Portfolio Filters, FAQ Accordion,
- * and Interactive Product/Accessory Specification Detail Modal.
+ * Features: Responsive Navbar, FAQ Accordion,
+ * Portfolio Bento Touch/Click Interaction, Series Sticky Nav ScrollSpy,
+ * and Centralized Product Specification Database.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initRoomCalculator();
   initFaqAccordion();
-  initProductFilter();
-  initPortfolioFilter();
-  initProductDetailModal();
+  initPortfolioBento();
+  initSeriesNavScrollSpy();
 });
 
 // -------------------------------------------------------------
 // 1. NAVBAR & MOBILE DRAWER
 // -------------------------------------------------------------
 function initNavbar() {
-  const header = document.querySelector('.site-header');
-  const mobileToggle = document.getElementById('mobileMenuToggle');
+  const header = document.querySelector('.site-header') || document.querySelector('header');
+  const mobileToggle = document.getElementById('mobileMenuToggle') || document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
   function updateNavbar() {
@@ -71,100 +69,7 @@ function initNavbar() {
 }
 
 // -------------------------------------------------------------
-// 2. SMART BOARD ROOM SIZE CALCULATOR
-// -------------------------------------------------------------
-function initRoomCalculator() {
-  const roomSelect = document.getElementById('calcRoomType');
-  const capacitySelect = document.getElementById('calcCapacity');
-  const sizeTitle = document.getElementById('calcSizeTitle');
-  const sizeDistance = document.getElementById('calcSizeDistance');
-  const productListContainer = document.getElementById('calcProductList');
-  const viewDetailBtn = document.getElementById('calcViewDetailBtn');
-
-  if (!roomSelect) return;
-
-  const recommendations = {
-    small: {
-      size: '65 Inch (4K UHD)',
-      distance: '2 - 4.5 Meter',
-      products: [
-        'Smart Board Cahaya Mustika 65" 4K UHD',
-        'Smart Board 65" Huddle Meeting Series',
-        'Paket 65" Wall Mount + Dual Magnetic Stylus'
-      ],
-      targetUrl: 'produk.html'
-    },
-    medium: {
-      size: '75 Inch (4K UHD Pro) - Paling Populer',
-      distance: '3.5 - 7 Meter',
-      products: [
-        'Smart Board Cahaya Mustika 75" 4K Pro (Best Seller)',
-        'Smart Board 75" Dual OS (Android 13 + Windows 11)',
-        'Paket Smart Classroom 75" + Heavy Duty Mobile Trolley'
-      ],
-      targetUrl: 'produk.html'
-    },
-    large: {
-      size: '86 Inch (4K UHD Flagship)',
-      distance: '5 - 10 Meter',
-      products: [
-        'Smart Board Cahaya Mustika 86" Enterprise Ultra',
-        'Smart Board 86" Boardroom Direksi Edition',
-        'Paket 86" + Modul OPS Intel Core i7 16GB + Soundbar 40W'
-      ],
-      targetUrl: 'produk.html'
-    },
-    hall: {
-      size: '98 Inch (Giant Cinema Edition)',
-      distance: '6 - 20 Meter',
-      products: [
-        'Smart Board Cahaya Mustika 98" Cinema Max',
-        'Smart Board 98" Auditorium & Situation Room',
-        'Paket Command Center 98" + 4K AI Tracking PTZ Interface'
-      ],
-      targetUrl: 'produk.html'
-    }
-  };
-
-  function updateRecommendation() {
-    const room = roomSelect.value || 'medium';
-    const rec = recommendations[room] || recommendations.medium;
-
-    if (sizeTitle) {
-      sizeTitle.textContent = rec.size;
-    }
-
-    if (sizeDistance) {
-      sizeDistance.textContent = rec.distance;
-    }
-
-    if (productListContainer) {
-      productListContainer.innerHTML = '';
-      rec.products.forEach((prodName) => {
-        const item = document.createElement('li');
-        item.className = 'flex items-start gap-2.5 text-xs sm:text-sm text-slate-100';
-        item.innerHTML = `
-          <span class="w-5 h-5 rounded-full bg-blue-500/30 text-sky-300 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
-          <span class="font-medium">${prodName}</span>
-        `;
-        productListContainer.appendChild(item);
-      });
-    }
-
-    if (viewDetailBtn) {
-      viewDetailBtn.href = rec.targetUrl;
-    }
-  }
-
-  roomSelect.addEventListener('change', updateRecommendation);
-  if (capacitySelect) {
-    capacitySelect.addEventListener('change', updateRecommendation);
-  }
-  updateRecommendation();
-}
-
-// -------------------------------------------------------------
-// 3. FAQ ACCORDION
+// 2. FAQ ACCORDION
 // -------------------------------------------------------------
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -201,150 +106,586 @@ function initFaqAccordion() {
 }
 
 // -------------------------------------------------------------
-// 4. PRODUCT CATALOG FILTER
-// -------------------------------------------------------------
-function initProductFilter() {
-  const filterButtons = document.querySelectorAll('.product-filter-btn');
-  const productCards = document.querySelectorAll('.product-card-item');
-
-  if (!filterButtons.length || !productCards.length) return;
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-
-      filterButtons.forEach(b => {
-        b.classList.remove('bg-navy', 'text-white');
-        b.classList.add('bg-white', 'text-slate-700');
-      });
-      btn.classList.add('bg-navy', 'text-white');
-      btn.classList.remove('bg-white', 'text-slate-700');
-
-      productCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.classList.remove('hidden');
-          card.style.opacity = '0';
-          setTimeout(() => {
-            card.style.transition = 'opacity 0.25s ease';
-            card.style.opacity = '1';
-          }, 30);
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-}
-
-// -------------------------------------------------------------
-// 5. PORTFOLIO FILTER
-// -------------------------------------------------------------
-function initPortfolioFilter() {
-  const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-card-item');
-
-  if (!filterBtns.length || !portfolioItems.length) return;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-
-      filterBtns.forEach(b => {
-        b.classList.remove('bg-navy', 'text-white');
-        b.classList.add('bg-white', 'text-slate-700');
-      });
-      btn.classList.add('bg-navy', 'text-white');
-      btn.classList.remove('bg-white', 'text-slate-700');
-
-      portfolioItems.forEach(item => {
-        const cat = item.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  });
-}
-
-// -------------------------------------------------------------
-// 6. PRODUCT & ACCESSORY DETAIL MODAL POPUP
+// 3. PRODUCT & ACCESSORY SPECIFICATION DATABASE
 // -------------------------------------------------------------
 const productDatabase = {
-  '65': {
-    title: 'Smart Board 65" 4K UHD Interactive',
-    category: 'Display 65 Inch',
-    image: 'assets/images/smartboard-65.svg',
-    description: 'Papan tulis interaktif 65 inch beresolusi 4K Ultra HD yang dirancang ideal untuk ruang meeting kecil (huddle room 4-10 orang), ruang kerja pimpinan, dan bimbingan belajar.',
+  // --- HIKVISION ULTRA SERIES ---
+  'ds-d5c65rba': {
+    title: 'Hikvision DS-D5C65RB/A',
+    category: 'SMART BOARD HIKVISION ULTRA SERIES',
+    image: 'assets/images/hikvision/hikvision-ultra.webp',
+    description: 'Smart Board Hikvision Ultra Series 65 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
     specs: [
-      { label: 'Resolusi Layar', value: '4K Ultra HD (3840 x 2160 pixels)' },
-      { label: 'Kaca Pelindung', value: '4mm Tempered Glass 7H Mohs Anti-Glare' },
-      { label: 'Teknologi Sentuh', value: 'Infrared 40-Point Touch (Latensi <5ms)' },
-      { label: 'Sistem Operasi', value: 'Android 13.0 + Slot OPS Mini PC Windows 11' },
-      { label: 'Konektivitas', value: 'HDMI 2.0 In/Out, USB 3.0 x 4, Type-C 65W PD, LAN RJ45' },
-      { label: 'Audio', value: 'Dual Integrated Speaker 2 x 15 Watt' },
-      { label: 'Kapasitas Ruang', value: '4 - 10 Orang (Jarak pandang ideal 2 - 4.5 Meter)' },
-      { label: 'Garansi Resmi', value: '3 Tahun Garansi Spare Part & Servis On-Site' }
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
     ]
   },
-  '75': {
-    title: 'Smart Board 75" 4K Pro Edition',
-    category: 'Display 75 Inch (Best Seller)',
-    image: 'assets/images/smartboard-75.svg',
-    description: 'Seri paling diminati untuk ruang rapat manajemen korporat, BUMN, instansi pemerintah (E-Katalog LKPP), serta ruang kuliah smart classroom universitas.',
+  'ds-d5c75rba': {
+    title: 'Hikvision DS-D5C75RB/A',
+    category: 'SMART BOARD HIKVISION ULTRA SERIES',
+    image: 'assets/images/hikvision/hikvision-ultra.webp',
+    description: 'Smart Board Hikvision Ultra Series 75 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
     specs: [
-      { label: 'Resolusi Layar', value: '4K Ultra HD (3840 x 2160 pixels) IPS Panel' },
-      { label: 'Kaca Pelindung', value: 'Anti-Glare 7H Mohs, Anti-Fingerprint & Anti-Bakteri' },
-      { label: 'Kamera & Mic', value: '48MP AI Auto-Tracking Camera + 8-Array Noise-Canceling Mic' },
-      { label: 'Teknologi Sentuh', value: 'Zero-Gap 40-Point Multi-Touch Ultra Presisi' },
-      { label: 'Sistem Operasi', value: 'Dual OS: Android 13 Enterprise + OPS Windows 11 Pro' },
-      { label: 'Screen Mirroring', value: 'Wireless Sharing hingga 4 Perangkat Sekaligus' },
-      { label: 'Sertifikasi', value: 'Sertifikat TKDN Kemenperin RI & E-Katalog LKPP' },
-      { label: 'Garansi Resmi', value: '3 Tahun Garansi Purna Jual Resmi Cahaya Mustika' }
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
     ]
   },
-  '86': {
-    title: 'Smart Board 86" Flagship Ultra',
-    category: 'Display 86 Inch (Boardroom)',
-    image: 'assets/images/smartboard-86.svg',
-    description: 'Layar raksasa imersif berdimensi luas untuk ruang rapat dewan direksi, auditorium pertemuan, laboratorium kampus, dan gedung diklat pelatihan.',
+  'ds-d5c86rba': {
+    title: 'Hikvision DS-D5C86RB/A',
+    category: 'SMART BOARD HIKVISION ULTRA SERIES',
+    image: 'assets/images/hikvision/hikvision-ultra.webp',
+    description: 'Smart Board Hikvision Ultra Series 86 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
     specs: [
-      { label: 'Resolusi Layar', value: '86 Inch 4K UHD Zero-Gap Optical Bonding' },
-      { label: 'Kaca Pelindung', value: 'Anti-Glare 7H Mohs High Durability' },
-      { label: 'Spesifikasi OPS', value: 'Intel Core i7, 16GB RAM DDR4, SSD 512GB NVMe M.2' },
-      { label: 'Audio Terintegrasi', value: 'Soundbar Stereo Subwoofer 40 Watt Berdaya Tinggi' },
-      { label: 'Kamera AI', value: '48MP AI Auto-Tracking + Speaker Locator' },
-      { label: 'Sensivitas Pena', value: 'Dual Stylus simultan dengan deteksi ketebalan berbeda' },
-      { label: 'Kapasitas Ruang', value: '25 - 50+ Orang (Jarak pandang 5 - 10 Meter)' },
-      { label: 'Garansi Resmi', value: '3 Tahun Garansi Lengkap On-Site' }
+      { label: 'Size', value: '86 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
     ]
   },
-  '98': {
-    title: 'Smart Board 98" Cinema Max',
-    category: 'Display 98 Inch (Auditorium)',
-    image: 'assets/images/smartboard-98.svg',
-    description: 'Tampilan spektakuler ukuran kolosal 2.2 x 1.3 meter untuk aula utama, auditorium kampus, ballroom hotel, dan command center monitoring kebencanaan.',
+
+  // --- HIKVISION PERFORMANCE SERIES ---
+  'ds-d5b65rbep': {
+    title: 'Hikvision DS-D5B65RB/EP',
+    category: 'SMART BOARD HIKVISION PERFORMANCE SERIES',
+    image: 'assets/images/hikvision/hikvision-performance.webp',
+    description: 'Smart Board Hikvision Performance Series 65 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
     specs: [
-      { label: 'Ukuran Panel', value: '98 Inch Giant Cinema Display (221 x 132 cm)' },
-      { label: 'Tingkat Kecerahan', value: '500 nits High Brightness Anti-Glare' },
-      { label: 'Akurasi Warna', value: '1.07 Miliar Warna DCI-P3 95%' },
-      { label: 'Sistem Hardware', value: 'OPS Intel Core i7 High-End Enterprise' },
-      { label: 'Interface Video', value: 'Dukungan Video Matrix & PTZ Camera 4K' },
-      { label: 'Kapasitas Ruang', value: '50 - 200+ Peserta (Jarak pandang 8 - 25 Meter)' },
-      { label: 'Pengadaan', value: 'Tersedia di E-Katalog LKPP / SPK Pemerintah' },
-      { label: 'Garansi Resmi', value: '3 Tahun Garansi Resmi Cahaya Mustika' }
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
     ]
   },
+  'ds-d5b75rbep': {
+    title: 'Hikvision DS-D5B75RB/EP',
+    category: 'SMART BOARD HIKVISION PERFORMANCE SERIES',
+    image: 'assets/images/hikvision/hikvision-performance.webp',
+    description: 'Smart Board Hikvision Performance Series 75 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
+    specs: [
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
+    ]
+  },
+  'ds-d5b86rbep': {
+    title: 'Hikvision DS-D5B86RB/EP',
+    category: 'SMART BOARD HIKVISION PERFORMANCE SERIES',
+    image: 'assets/images/hikvision/hikvision-performance.webp',
+    description: 'Smart Board Hikvision Performance Series 86 inch beresolusi 4K dengan sistem operasi Android 14, RAM 8 GB, Storage 128 GB, dan sentuhan 50 Points Infrared Touch.',
+    specs: [
+      { label: 'Size', value: '86 Inch' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Operating System', value: 'Android 14' },
+      { label: 'Memory', value: '8 GB' },
+      { label: 'Storage', value: '128 GB' },
+      { label: 'Touch', value: '50 Points Infrared Touch' }
+    ]
+  },
+
+  // --- SMART BOARD ZELT PRO ---
+  'zelt-pro-65': {
+    title: 'ZELT Pro 65 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 65 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-pro-75': {
+    title: 'ZELT Pro 75 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 75 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-pro-85': {
+    title: 'ZELT Pro 85 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 85 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '85 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-pro-98': {
+    title: 'ZELT Pro 98 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 98 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '98 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-pro-103': {
+    title: 'ZELT Pro 103 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 103 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '103 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-pro-105': {
+    title: 'ZELT Pro 105 Inch',
+    category: 'SMART BOARD ZELT PRO',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Pro 105 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '105 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+
+  // --- SMART BOARD ZELT LITE ---
+  'zelt-lite-65': {
+    title: 'ZELT Lite 65 Inch',
+    category: 'SMART BOARD ZELT LITE',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Lite 65 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-lite-75': {
+    title: 'ZELT Lite 75 Inch',
+    category: 'SMART BOARD ZELT LITE',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Lite 75 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+  'zelt-lite-85': {
+    title: 'ZELT Lite 85 Inch',
+    category: 'SMART BOARD ZELT LITE',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Smart Board ZELT Lite 85 Inch beresolusi 4K UHD dengan panel D-LED Non-Glare Zero Bonding, RAM 16GB, dan ROM 256GB.',
+    specs: [
+      { label: 'Size', value: '85 Inch' },
+      { label: 'Panel Type', value: 'D-LED' },
+      { label: 'Resolution', value: '4K UHD' },
+      { label: 'Glass Panel', value: 'Non-Glare w/ Zero Bonding' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Hardened Glass', value: 'Mohs-7 Level' },
+      { label: 'Dynamic Ratio', value: '4000:1' },
+      { label: 'Brightness', value: 'Over 450 cd/mÂ²' },
+      { label: 'Support OS', value: 'Android/Windows/Mac/Linux/Chrome-OS' },
+      { label: 'Speaker', value: '15W Ã— 2; 20W Subwoofer' },
+      { label: 'CPU', value: 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz' },
+      { label: 'GPU', value: 'Mali-G610 MC4' },
+      { label: 'NPU', value: '6-TOPS' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'ROM', value: '256GB' }
+    ]
+  },
+
+  // --- SAMSUNG FLIP WMB SERIES ---
+  'sam-wm55b': {
+    title: 'Samsung Flip WM55B',
+    category: 'SMART BOARD SAMSUNG FLIP WMB',
+    image: 'assets/images/samsung/samsung-flip-wmb.webp',
+    description: 'Smart Board Samsung Flip 55 Inch resolusi 4K UHD dengan sistem operasi Tizen 6.5, latensi sentuh responsif, dan konektivitas lengkap.',
+    specs: [
+      { label: 'Size', value: '55 Inch' },
+      { label: 'Panel Type', value: 'VA (New Edge), 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '350 nit (without glass)' },
+      { label: 'Contrast Ratio', value: '4000:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 20 Points' },
+      { label: 'Operating System', value: 'Tizen 6.5' },
+      { label: 'Processor', value: 'Quad-Core 1.7GHz' },
+      { label: 'Storage', value: '32 GB' },
+      { label: 'Speaker', value: '10W x 2CH (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+  'sam-wm65b': {
+    title: 'Samsung Flip WM65B',
+    category: 'SMART BOARD SAMSUNG FLIP WMB',
+    image: 'assets/images/samsung/samsung-flip-wmb.webp',
+    description: 'Smart Board Samsung Flip 65 Inch resolusi 4K UHD dengan sistem operasi Tizen 6.5, latensi sentuh responsif, dan konektivitas lengkap.',
+    specs: [
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Panel Type', value: 'VA (New Edge), 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '350 nit (without glass)' },
+      { label: 'Contrast Ratio', value: '4000:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 20 Points' },
+      { label: 'Operating System', value: 'Tizen 6.5' },
+      { label: 'Processor', value: 'Quad-Core 1.7GHz' },
+      { label: 'Storage', value: '32 GB' },
+      { label: 'Speaker', value: '10W x 2CH (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+  'sam-wm75b': {
+    title: 'Samsung Flip WM75B',
+    category: 'SMART BOARD SAMSUNG FLIP WMB',
+    image: 'assets/images/samsung/samsung-flip-wmb.webp',
+    description: 'Smart Board Samsung Flip 75 Inch resolusi 4K UHD dengan sistem operasi Tizen 6.5, speaker 4CH 40W, dan konektivitas lengkap.',
+    specs: [
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Panel Type', value: 'VA (New Edge), 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '350 nit (without glass)' },
+      { label: 'Contrast Ratio', value: '4000:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 20 Points' },
+      { label: 'Operating System', value: 'Tizen 6.5' },
+      { label: 'Processor', value: 'Quad-Core 1.7GHz' },
+      { label: 'Storage', value: '32 GB' },
+      { label: 'Speaker', value: '4CH, 40W Total (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+  'sam-wm85b': {
+    title: 'Samsung Flip WM85B',
+    category: 'SMART BOARD SAMSUNG FLIP WMB',
+    image: 'assets/images/samsung/samsung-flip-wmb.webp',
+    description: 'Smart Board Samsung Flip 85 Inch resolusi 4K UHD dengan sistem operasi Tizen 6.5, speaker 4CH 40W, dan konektivitas lengkap.',
+    specs: [
+      { label: 'Size', value: '85 Inch' },
+      { label: 'Panel Type', value: 'VA (New Edge), 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '350 nit (without glass)' },
+      { label: 'Contrast Ratio', value: '4000:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 20 Points' },
+      { label: 'Operating System', value: 'Tizen 6.5' },
+      { label: 'Processor', value: 'Quad-Core 1.7GHz' },
+      { label: 'Storage', value: '32 GB' },
+      { label: 'Speaker', value: '4CH, 40W Total (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+
+  // --- SAMSUNG SMART BOARD WAD SERIES (ANDROID) ---
+  'sam-wa65d': {
+    title: 'Samsung WA65D',
+    category: 'SMART BOARD SAMSUNG WAD',
+    image: 'assets/images/samsung/samsung-wad.webp',
+    description: 'Smart Board Samsung WA65D 65 Inch berbasis Android 13 EDLA Certified dengan panel Direct LED 4K UHD, RAM 8GB, dan storage 64GB.',
+    specs: [
+      { label: 'Size', value: '65 Inch' },
+      { label: 'Panel Type', value: 'Direct LED, 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '400 nit' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 40 Points' },
+      { label: 'Operating System', value: 'Android 13 (EDLA Certified)' },
+      { label: 'RAM', value: '8 GB' },
+      { label: 'Storage', value: '64 GB' },
+      { label: 'Speaker', value: '15W x 2CH (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+  'sam-wa75d': {
+    title: 'Samsung WA75D',
+    category: 'SMART BOARD SAMSUNG WAD',
+    image: 'assets/images/samsung/samsung-wad.webp',
+    description: 'Smart Board Samsung WA75D 75 Inch berbasis Android 13 EDLA Certified dengan panel Direct LED 4K UHD, RAM 8GB, dan storage 64GB.',
+    specs: [
+      { label: 'Size', value: '75 Inch' },
+      { label: 'Panel Type', value: 'Direct LED, 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '400 nit' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 40 Points' },
+      { label: 'Operating System', value: 'Android 13 (EDLA Certified)' },
+      { label: 'RAM', value: '8 GB' },
+      { label: 'Storage', value: '64 GB' },
+      { label: 'Speaker', value: '15W x 2CH (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+  'sam-wa86d': {
+    title: 'Samsung WA86D',
+    category: 'SMART BOARD SAMSUNG WAD',
+    image: 'assets/images/samsung/samsung-wad.webp',
+    description: 'Smart Board Samsung WA86D 86 Inch berbasis Android 13 EDLA Certified dengan panel Direct LED 4K UHD, RAM 8GB, dan storage 64GB.',
+    specs: [
+      { label: 'Size', value: '86 Inch' },
+      { label: 'Panel Type', value: 'Direct LED, 60Hz' },
+      { label: 'Resolution', value: '3840 x 2160 (4K UHD)' },
+      { label: 'Brightness', value: '400 nit' },
+      { label: 'Contrast Ratio', value: '1200:1' },
+      { label: 'Touch', value: 'Infrared (IR), Up to 40 Points' },
+      { label: 'Operating System', value: 'Android 13 (EDLA Certified)' },
+      { label: 'RAM', value: '8 GB' },
+      { label: 'Storage', value: '64 GB' },
+      { label: 'Speaker', value: '15W x 2CH (Built-in)' },
+      { label: 'Connectivity', value: 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth' }
+    ]
+  },
+
+  // --- AKSESORIS HIKVISION ---
+  'ds-d5sc3b-b': {
+    title: 'Active Dongle DS-D5SC3B-B',
+    category: 'AKSESORIS HIKVISION',
+    image: 'assets/images/hikvision/Active-Dongle-Hikvision-DS-D5SC3B-B.webp',
+    description: 'Active Dongle Wireless Type-C resolusi 4K dengan koneksi 2.4G / 5G dan dukungan NFC untuk D5B/C/D Series.',
+    specs: [
+      { label: 'Type', value: 'Wireless Dongle' },
+      { label: 'Resolution', value: '4K' },
+      { label: 'Connectivity', value: '2.4G / 5G' },
+      { label: 'Interface', value: 'Type-C' },
+      { label: 'NFC', value: 'Supported' },
+      { label: 'Compatibility', value: 'D5B/C/D Series, D5B EL/FL Series, D5C Series' }
+    ]
+  },
+  'ds-d5abky3-sl': {
+    title: 'Mobile Bracket DS-D5ABKY3-SL',
+    category: 'AKSESORIS HIKVISION',
+    image: 'assets/images/hikvision/Mobile-Bracket-Hikvision-DS-D5ABKY3-SL.webp',
+    description: 'Mobile bracket resmi Hikvision untuk layar ukuran 55â€“75 Inch.',
+    specs: [
+      { label: 'Type', value: 'Mobile Bracket' },
+      { label: 'Screen Size', value: '55â€“75 Inch' }
+    ]
+  },
+  'ds-d5asb01': {
+    title: 'Mobile Bracket DS-D5ABKY3-SL',
+    category: 'AKSESORIS HIKVISION',
+    image: 'assets/images/hikvision/Mobile-Bracket-Hikvision-DS-D5ABKY3-SL.webp',
+    description: 'Mobile bracket resmi Hikvision untuk layar ukuran 55â€“75 Inch.',
+    specs: [
+      { label: 'Type', value: 'Mobile Bracket' },
+      { label: 'Screen Size', value: '55â€“75 Inch' }
+    ]
+  },
+  'ds-d5ac12g5-8s2': {
+    title: 'OPS Module DS-D5AC12G5-8S2',
+    category: 'AKSESORIS HIKVISION',
+    image: 'assets/images/hikvision/OPS-module-Hikvision-DS-D5AC12G5-8S2.webp',
+    description: 'OPS Module Intel Core i5 12th Gen dengan RAM 8 GB, Storage 256 GB SSD, Wi-Fi 6, dan Windows 11.',
+    specs: [
+      { label: 'Processor', value: 'Intel Core i5 12th Gen' },
+      { label: 'RAM', value: '8 GB' },
+      { label: 'Storage', value: '256 GB SSD' },
+      { label: 'Wi-Fi', value: 'Wi-Fi 6' },
+      { label: 'Operating System', value: 'Windows 11' }
+    ]
+  },
+
+  // --- AKSESORIS SMART BOARD ZELT ---
+  'zelt-standing': {
+    title: 'Standing Smart Board ZELT',
+    category: 'AKSESORIS SMART BOARD ZELT',
+    image: 'assets/images/zelt/standing-smart-board-zelt.webp',
+    description: 'Standing Smart Board ZELT tipe Mobile Standee untuk fleksibilitas penempatan layar hingga ukuran 86 Inch.',
+    specs: [
+      { label: 'Type', value: 'Mobile Standee' },
+      { label: 'Max Screen Size', value: 'Up to 86 Inch' }
+    ]
+  },
+  'zelt-dongle': {
+    title: 'Active Dongle USB',
+    category: 'AKSESORIS SMART BOARD ZELT',
+    image: 'assets/images/zelt/active-dongle-usb-smart-board-zelt.webp',
+    description: 'Active Dongle USB tipe Wireless Presenter Dongle untuk screen sharing nirkabel instan ke Smart Board ZELT.',
+    specs: [
+      { label: 'Type', value: 'Wireless Presenter Dongle' }
+    ]
+  },
+  'zelt-ops': {
+    title: 'Active OPS',
+    category: 'AKSESORIS SMART BOARD ZELT',
+    image: 'assets/images/zelt/active-ops-smart-board-zelt.webp',
+    description: 'Active OPS PC modul performa tinggi dengan prosesor Intel Core i7 13th Gen, RAM 16GB, dan SSD 512GB untuk Smart Board ZELT.',
+    specs: [
+      { label: 'Processor', value: 'Intel Core i7 13th Gen' },
+      { label: 'RAM', value: '16GB' },
+      { label: 'Storage', value: '512GB SSD' }
+    ]
+  },
+
+  // --- AKSESORIS SAMSUNG ---
+  'sam-wall-mount': {
+    title: 'Wall Mount Samsung',
+    category: 'AKSESORIS SAMSUNG',
+    image: 'assets/images/samsung/Wall Mount Samsung.webp',
+    description: 'Bracket dinding resmi Wall Mount Samsung material baja kokoh untuk Samsung Flip Pro (WMB) dan Smart Board Samsung (WAD) Series.',
+    specs: [
+      { label: 'Type', value: 'Wall Mount Bracket' },
+      { label: 'Kompatibilitas', value: 'Samsung Flip Pro (WMB) & Smart Board Samsung (WAD) Series' },
+      { label: 'VESA', value: '400x400 / 600x400 / 800x400 / 800x600 mm' },
+      { label: 'Material', value: 'Steel' }
+    ]
+  },
+  'sam-mobile-stand': {
+    title: 'Mobile Stand Samsung',
+    category: 'AKSESORIS SAMSUNG',
+    image: 'assets/images/samsung/Mobile Stand Samsung.webp',
+    description: 'Stand mobile beroda height-adjustable dengan 4 roda pengunci lockable untuk Samsung Flip Pro (WMB) dan Smart Board Samsung (WAD) Series.',
+    specs: [
+      { label: 'Type', value: 'Mobile Stand Beroda, Height-Adjustable' },
+      { label: 'Kompatibilitas', value: 'Samsung Flip Pro (WMB) & Smart Board Samsung (WAD) Series' },
+      { label: 'Roda', value: '4 Caster Wheels (Lockable)' }
+    ]
+  },
+  'sam-ops-pc': {
+    title: 'OPS PC Samsung',
+    category: 'AKSESORIS SAMSUNG',
+    image: 'assets/images/samsung/OPS PC Samsung.webp',
+    description: 'Modul komputer OPS Samsung SBB-PB32EV4 dengan prosesor AMD RX425BB Quad-Core, RAM 4GB, dan SSD 32GB Windows 7 Embedded.',
+    specs: [
+      { label: 'Type', value: 'Samsung SBB-PB32EV4 OPS Module' },
+      { label: 'Processor', value: 'AMD RX425BB 2.5GHz Quad-Core' },
+      { label: 'RAM', value: '4 GB' },
+      { label: 'Storage', value: '32 GB SSD' },
+      { label: 'Operating System', value: 'Windows 7 Embedded' }
+    ]
+  },
+  'sam-ops': {
+    title: 'OPS PC Samsung',
+    category: 'AKSESORIS SAMSUNG',
+    image: 'assets/images/samsung/OPS PC Samsung.webp',
+    description: 'Modul komputer OPS Samsung SBB-PB32EV4 dengan prosesor AMD RX425BB Quad-Core, RAM 4GB, dan SSD 32GB Windows 7 Embedded.',
+    specs: [
+      { label: 'Type', value: 'Samsung SBB-PB32EV4 OPS Module' },
+      { label: 'Processor', value: 'AMD RX425BB 2.5GHz Quad-Core' },
+      { label: 'RAM', value: '4 GB' },
+      { label: 'Storage', value: '32 GB SSD' },
+      { label: 'Operating System', value: 'Windows 7 Embedded' }
+    ]
+  },
+
+  // --- AKSESORIS UMUM & ALIASES ---
   'acc-trolley': {
-    title: 'Heavy Duty Mobile Trolley Stand',
+    title: 'Heavy Duty Mobile Trolley Stand (65" - 105")',
     category: 'Aksesoris Penyangga',
-    image: 'assets/images/smartboard-accessories.svg',
-    description: 'Standing trolley beroda kuat dan presisi untuk memindahkan unit Smart Board antar ruang rapat kantor dan kelas dengan aman.',
+    image: 'assets/images/zelt/standing-smart-board-zelt.webp',
+    description: 'Standing trolley beroda kuat dan presisi untuk memindahkan unit Smart Board Hikvision, ZELT, dan Samsung antar ruang rapat dan kelas dengan aman.',
     specs: [
       { label: 'Material Rangka', value: 'Baja Cold-Rolled SPCC tebal 2.0 mm anti-karat' },
-      { label: 'Kapasitas Beban', value: 'Menopang display 65" hingga 98" (Beban Maksimal 150 kg)' },
+      { label: 'Kapasitas Beban', value: 'Menopang display 55" hingga 105" (Beban Maksimal 150 kg)' },
       { label: 'Roda Mobilitas', value: '4 Roda Polyurethane putar 360° dengan rem ganda (dual-lock)' },
       { label: 'Tinggi Tiang', value: 'Dapat diatur ketinggiannya (Adjustable 1200 - 1500 mm)' },
       { label: 'Rak Ekstra', value: 'Dilengkapi baki tray atas untuk kamera PTZ dan rak bawah laptop' },
@@ -354,7 +695,7 @@ const productDatabase = {
   'acc-ops': {
     title: 'Modul Mini PC OPS Windows 11 Pro',
     category: 'Modul Sistem Operasi',
-    image: 'assets/images/smartboard-accessories.svg',
+    image: 'assets/images/hikvision/OPS-module-Hikvision-DS-D5AC12G5-8S2.webp',
     description: 'Modul mini PC standar industri (Open Pluggable Standard) yang dapat dipasang langsung pada slot belakang Smart Board tanpa kabel berserakan.',
     specs: [
       { label: 'Prosesor', value: 'Intel Core i5 / i7 Generasi ke-12 / 13' },
@@ -369,7 +710,7 @@ const productDatabase = {
   'acc-dongle': {
     title: 'Wireless USB Screen-Share Dongle',
     category: 'Aksesoris Konektivitas',
-    image: 'assets/images/smartboard-accessories.svg',
+    image: 'assets/images/hikvision/Active-Dongle-Hikvision-DS-D5SC3B-B.webp',
     description: 'Tombol pemancar nirkabel praktis untuk membagikan layar laptop ke Smart Board hanya dengan sekali klik tanpa instal software.',
     specs: [
       { label: 'Tipe Konektor', value: 'Dual interface USB-A & USB Type-C' },
@@ -383,7 +724,7 @@ const productDatabase = {
   'acc-stylus': {
     title: 'Dual Magnetic Passive Smart Stylus',
     category: 'Aksesoris Pen & Sentuh',
-    image: 'assets/images/smartboard-accessories.svg',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
     description: 'Pena digital pasif berpresisi tinggi dengan daya rekat magnetik yang menempel rapi pada bezel Smart Board.',
     specs: [
       { label: 'Tipe Ujung (Nib)', value: 'Dual Nib: 3mm fine point (tulisan) & 8mm tip (marker)' },
@@ -393,133 +734,123 @@ const productDatabase = {
       { label: 'Material Bodi', value: 'Alumunium alloy matte ringan, tahan banting, ergonomis' },
       { label: 'Dudukan Magnet', value: 'Snap-on otomatis pada frame bawah Smart Board' }
     ]
+  },
+
+  // Aliases for backwards compatibility
+  '65': {
+    title: 'Smart Board Hikvision & ZELT 65" 4K UHD',
+    category: 'Display 65 Inch',
+    image: 'assets/images/hikvision/hikvision-ultra.webp',
+    description: 'Papan tulis interaktif 65 inch beresolusi 4K Ultra HD untuk ruang meeting kecil, ruang kepala kantor, dan smart classroom.',
+    specs: [
+      { label: 'Resolusi Layar', value: '4K Ultra HD (3840 x 2160 pixels)' },
+      { label: 'Kaca Pelindung', value: '4mm Tempered Glass 7H Mohs Anti-Glare' },
+      { label: 'Garansi Resmi', value: '3 Tahun Garansi Servis & Spare Part' }
+    ]
+  },
+  '75': {
+    title: 'Smart Board Hikvision & ZELT 75" 4K Pro',
+    category: 'Display 75 Inch (Best Seller)',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Pilihan paling populer untuk ruang meeting manajemen dan perkuliahan kampus.',
+    specs: [
+      { label: 'Resolusi Layar', value: '4K Ultra HD IPS Panel' },
+      { label: 'Garansi Resmi', value: '3 Tahun Garansi Resmi' }
+    ]
+  },
+  '86': {
+    title: 'Smart Board 86" Flagship Ultra',
+    category: 'Display 86 Inch (Boardroom)',
+    image: 'assets/images/samsung/samsung-wad.webp',
+    description: 'Layar raksasa imersif untuk boardroom direksi dan auditorium pertemuan.',
+    specs: [
+      { label: 'Resolusi Layar', value: '86 Inch 4K UHD Optical Bonding' },
+      { label: 'Garansi Resmi', value: '3 Tahun Garansi Resmi' }
+    ]
+  },
+  '98': {
+    title: 'Smart Board ZELT Pro 98" Cinema Max',
+    category: 'Display 98 Inch (Auditorium)',
+    image: 'assets/images/zelt/zelt-lite-pro.webp',
+    description: 'Tampilan spektakuler ukuran kolosal 2.2 meter untuk aula utama dan command center.',
+    specs: [
+      { label: 'Ukuran Panel', value: '98 Inch Giant Screen' },
+      { label: 'Garansi Resmi', value: '3 Tahun Garansi Resmi' }
+    ]
   }
 };
 
-function initProductDetailModal() {
-  let modal = document.getElementById('productDetailModal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'productDetailModal';
-    modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.innerHTML = `
-      <div id="modalBox" class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 transform scale-95 transition-transform duration-200">
-        <div class="sticky top-0 bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between z-10">
-          <div>
-            <span id="modalCategory" class="badge-tag badge-navy text-[11px]">Kategori</span>
-            <h3 id="modalTitle" class="text-lg sm:text-xl font-extrabold text-navy-deep font-heading mt-1">Nama Produk</h3>
-          </div>
-          <button id="modalCloseBtn" type="button" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center font-bold text-base transition" aria-label="Tutup">
-            &times;
-          </button>
-        </div>
+// -------------------------------------------------------------
+// 4. PORTOFOLIO BENTO CARD CLICK & TOUCH INTERACTION
+// -------------------------------------------------------------
+function initPortfolioBento() {
+  const cards = document.querySelectorAll('.portfolio-bento-card');
+  if (!cards.length) return;
 
-        <div class="p-6 space-y-6">
-          <div class="bg-slate-100 rounded-xl p-4 flex items-center justify-center max-h-56 overflow-hidden">
-            <img id="modalImage" src="" alt="" class="max-h-48 w-auto object-contain">
-          </div>
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Jika pengguna menekan tautan eksplisit di dalam card, biarkan link berjalan normal
+      if (e.target.closest('a')) return;
 
-          <div>
-            <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-1">Deskripsi Produk:</h4>
-            <p id="modalDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed"></p>
-          </div>
+      const isActive = card.classList.contains('active');
+      
+      // Tutup card lain agar hanya 1 card yang aktif
+      cards.forEach(c => c.classList.remove('active'));
 
-          <div>
-            <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-2">Rincian Spesifikasi Teknis:</h4>
-            <div class="bg-soft-gray rounded-xl border border-slate-200 overflow-hidden">
-              <table class="w-full text-left text-xs sm:text-sm border-collapse">
-                <tbody id="modalSpecsTable" class="divide-y divide-slate-200"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="sticky bottom-0 bg-white border-t border-slate-200 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div class="text-xs text-slate-500">
-            *Tersedia pengadaan via <strong>E-Katalog LKPP &amp; SIPLah</strong>
-          </div>
-          <div class="flex items-center gap-2 w-full sm:w-auto">
-            <button id="modalCloseBtn2" type="button" class="btn-secondary text-xs py-2 px-4 flex-1 sm:flex-none">Tutup</button>
-            <a id="modalWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-xs py-2 px-4 flex-1 sm:flex-none">
-              Tanya Penawaran via WA
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-  }
-
-  const modalBox = document.getElementById('modalBox');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalCloseBtn2 = document.getElementById('modalCloseBtn2');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalCategory = document.getElementById('modalCategory');
-  const modalImage = document.getElementById('modalImage');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalSpecsTable = document.getElementById('modalSpecsTable');
-  const modalWaBtn = document.getElementById('modalWaBtn');
-
-  function openModal(productId) {
-    const data = productDatabase[productId] || productDatabase['75'];
-    if (!data) return;
-
-    modalTitle.textContent = data.title;
-    modalCategory.textContent = data.category;
-    modalImage.src = data.image;
-    modalImage.alt = data.title;
-    modalDesc.textContent = data.description;
-
-    modalSpecsTable.innerHTML = '';
-    data.specs.forEach(s => {
-      const row = document.createElement('tr');
-      row.className = 'hover:bg-slate-50';
-      row.innerHTML = `
-        <td class="p-3 font-semibold text-slate-800 bg-slate-50/50 w-2/5">${s.label}</td>
-        <td class="p-3 text-slate-700 font-medium">${s.value}</td>
-      `;
-      modalSpecsTable.appendChild(row);
+      if (!isActive) {
+        card.classList.add('active');
+      }
     });
-
-    const msg = encodeURIComponent(`Halo Tim Cahaya Mustika, saya ingin tanya harga dan ketersediaan stok untuk: ${data.title}. Mohon info brosur resminya.`);
-    modalWaBtn.href = `https://wa.me/6281233339090?text=${msg}`;
-
-    modal.classList.remove('hidden');
-    setTimeout(() => {
-      modal.classList.remove('opacity-0');
-      modalBox?.classList.remove('scale-95');
-    }, 10);
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.add('opacity-0');
-    modalBox?.classList.add('scale-95');
-    setTimeout(() => {
-      modal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }, 200);
-  }
-
-  modalCloseBtn?.addEventListener('click', closeModal);
-  modalCloseBtn2?.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeModal();
+
+  // Klik di luar area bento card untuk menutup state aktif
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.portfolio-bento-card')) {
+      cards.forEach(c => c.classList.remove('active'));
+    }
+  });
+}
+
+// -------------------------------------------------------------
+// 5. SERIES STICKY NAV SCROLL SPY & SMOOTH CLICK
+// -------------------------------------------------------------
+function initSeriesNavScrollSpy() {
+  const pills = document.querySelectorAll('.series-pill');
+  if (!pills.length) return;
+
+  const sections = [];
+  pills.forEach(pill => {
+    const hash = pill.getAttribute('href');
+    if (hash && hash.startsWith('#')) {
+      const el = document.querySelector(hash);
+      if (el) {
+        sections.push({ pill, el });
+        pill.addEventListener('click', (e) => {
+          e.preventDefault();
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          el.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
     }
   });
 
-  // Attach click listener to any element with data-product-modal
-  document.querySelectorAll('[data-product-modal]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = btn.getAttribute('data-product-modal');
-      openModal(id);
-    });
-  });
+  if (!sections.length) return;
+
+  function updateActivePill() {
+    const scrollPos = window.scrollY + 180;
+    let current = sections[0];
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].el.offsetTop <= scrollPos) {
+        current = sections[i];
+      }
+    }
+    pills.forEach(p => p.classList.remove('active'));
+    if (current) {
+      current.pill.classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', updateActivePill, { passive: true });
+  updateActivePill();
 }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CAHAYA MUSTIKA - SMART BOARD & INTERACTIVE FLAT PANEL SOLUTIONS
+   CAHAYA MUSTIKA - SMART BOARD OFFICIAL SOLUTIONS
    Design System:
    - Headings: Manrope
    - Body & Elements: Poppins
@@ -174,6 +174,32 @@ p, span, a, li, input, textarea, button, select, label {
   color: #FFFFFF;
 }
 
+/* Button Pill Shape (Lonjong) */
+.btn-pill,
+.btn-navy.btn-pill,
+.btn-whatsapp.btn-pill,
+.btn-secondary.btn-pill {
+  border-radius: 9999px !important;
+}
+
+/* Series Quick Navigation Pills */
+.series-pill {
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.series-pill.active {
+  background-color: var(--color-navy);
+  color: #FFFFFF !important;
+  border-color: var(--color-navy) !important;
+  box-shadow: 0 2px 8px rgba(0, 43, 154, 0.25);
+}
+.series-pill:not(.active):hover {
+  background-color: #F8FAFC;
+  color: var(--color-navy);
+  border-color: #CBD5E1;
+}
+
 /* Card Styling */
 .card-clean {
   background: #FFFFFF;
@@ -187,22 +213,6 @@ p, span, a, li, input, textarea, button, select, label {
   border-color: #CBD5E1;
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
-}
-
-.card-navy-highlight {
-  background: #FFFFFF;
-  border: 1.5px solid rgba(0, 43, 154, 0.15);
-  border-radius: 1.25rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
-}
-
-.card-navy-highlight:hover {
-  border-color: var(--color-navy);
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);
 }
 
 /* Badges */
@@ -223,37 +233,28 @@ p, span, a, li, input, textarea, button, select, label {
   border: 1px solid rgba(0, 43, 154, 0.18);
 }
 
-.badge-success {
-  background-color: var(--color-success-bg);
-  color: var(--color-success);
-  border: 1px solid rgba(5, 150, 105, 0.2);
-}
-
-/* Navbar Fixed & Transparent Hero styling */
+/* Navbar Solid Header styling (Tidak Transparan) */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 50;
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 27, 102, 0.05);
+  transition: box-shadow 0.25s ease;
 }
 
 .site-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: #ffffff;
   border-bottom-color: var(--color-border);
   box-shadow: 0 4px 20px -2px rgba(0, 27, 102, 0.08);
 }
 
 .site-header.site-header-solid {
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: #ffffff;
   border-bottom-color: var(--color-border);
 }
 
@@ -269,9 +270,11 @@ p, span, a, li, input, textarea, button, select, label {
   font-size: 0.95rem;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--color-navy);
-  background-color: var(--color-navy-subtle);
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .nav-link.active {
@@ -290,85 +293,52 @@ p, span, a, li, input, textarea, button, select, label {
   border-radius: 2px;
 }
 
-/* Interactive Canvas Whiteboard simulator */
-.whiteboard-screen {
-  background: #FFFFFF;
-  border: 8px solid #0F172A;
-  border-radius: 1.25rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 43, 154, 0.25);
+/* Navbar Dropdown */
+.nav-dropdown {
   position: relative;
-  overflow: hidden;
-  user-select: none;
+  display: inline-flex;
+  align-items: center;
 }
 
-.whiteboard-toolbar {
-  background: #F8FAFC;
-  border-bottom: 1px solid #E2E8F0;
-  padding: 0.5rem 0.75rem;
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 16.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  box-shadow: 0 14px 35px -4px rgba(0, 27, 102, 0.14), 0 4px 12px -2px rgba(0, 27, 102, 0.06);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 60;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(2px);
+}
+
+.nav-dropdown-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-/* Custom Checkmark list */
-.feature-check-item {
-  display: flex;
-  align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.95rem;
-  color: var(--color-text-main);
-}
-
-.check-icon-circle {
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 9999px;
-  background-color: var(--color-navy-subtle);
-  color: var(--color-navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
-/* Floating WhatsApp Quick Action */
-.floating-whatsapp {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background-color: #25D366;
-  color: #FFFFFF;
-  padding: 0.85rem 1.4rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 25px -3px rgba(37, 211, 102, 0.45), 0 4px 6px -4px rgba(37, 211, 102, 0.3);
-  font-weight: 600;
-  font-size: 0.92rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
   text-decoration: none;
-  transition: var(--transition-smooth);
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-.floating-whatsapp:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 15px 30px -3px rgba(37, 211, 102, 0.55);
-  color: #FFFFFF;
-}
-
-/* Pulse animation for badge */
-@keyframes pulseGlow {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.9; }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 3s infinite ease-in-out;
+.nav-dropdown-item:hover {
+  background-color: #F8FAFC;
+  transform: translateX(2px);
 }
 
 /* Custom scrollbar */
@@ -391,4 +361,76 @@ p, span, a, li, input, textarea, button, select, label {
   .site-header, .floating-whatsapp, footer, .no-print {
     display: none !important;
   }
+}
+
+/* ==========================================================================
+   PORTFOLIO BENTO GRID INTERACTIVE CARD
+   Deskripsi muncul dari bawah ke atas saat kursor diarahkan (hover)
+   dan saat kartu ditekan/diklik (.active)
+   ========================================================================== */
+.portfolio-bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #0f172a;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.portfolio-bento-card:hover,
+.portfolio-bento-card.active {
+  box-shadow: 0 20px 30px -10px rgba(0, 43, 154, 0.35);
+}
+
+.portfolio-bento-card .bento-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-bento-card:hover .bento-bg-img,
+.portfolio-bento-card.active .bento-bg-img {
+  transform: scale(1.08);
+}
+
+.portfolio-bento-card .bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.55) 50%, rgba(5, 19, 54, 0.95) 100%);
+  transition: background 0.3s ease;
+}
+
+.portfolio-bento-card:hover .bento-overlay,
+.portfolio-bento-card.active .bento-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.75) 40%, rgba(5, 19, 54, 0.98) 100%);
+}
+
+.portfolio-bento-card .bento-desc-wrapper {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease,
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.portfolio-bento-card:hover .bento-desc-wrapper,
+.portfolio-bento-card.active .bento-desc-wrapper {
+  max-height: 280px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-bento-card .bento-arrow-btn {
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-bento-card:hover .bento-arrow-btn,
+.portfolio-bento-card.active .bento-arrow-btn {
+  transform: scale(1.1);
+  background-color: var(--color-navy-light);
+  border-color: var(--color-navy-light);
 }
