@@ -750,9 +750,9 @@ const productDatabase = {
   },
   '75': {
     title: 'Smart Board Hikvision & ZELT 75" 4K Pro',
-    category: 'Display 75 Inch (Best Seller)',
+    category: 'Display 75 Inch',
     image: 'assets/images/zelt/zelt-lite-pro.webp',
-    description: 'Pilihan paling populer untuk ruang meeting manajemen dan perkuliahan kampus.',
+    description: 'Pilihan ideal untuk ruang meeting manajemen dan perkuliahan kampus.',
     specs: [
       { label: 'Resolusi Layar', value: '4K Ultra HD IPS Panel' },
       { label: 'Garansi Resmi', value: '3 Tahun Garansi Resmi' }
