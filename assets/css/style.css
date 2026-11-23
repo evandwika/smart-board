@@ -210,7 +210,7 @@ p, span, a, li, input, textarea, button, select, label {
 }
 
 .card-clean:hover {
-  border-color: #CBD5E1;
+  border-color: var(--color-navy);
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
