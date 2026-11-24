@@ -434,3 +434,44 @@ p, span, a, li, input, textarea, button, select, label {
   background-color: var(--color-navy-light);
   border-color: var(--color-navy-light);
 }
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS (Smooth, Apple-Grade & 60fps GPU Accelerated)
+   ========================================================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Once fully revealed, release transform so hover transitions remain 100% fluid */
+.scroll-reveal.reveal-completed {
+  transform: none;
+  transition: opacity 0.3s ease;
+  will-change: auto;
+}
+
+/* Stagger delay classes */
+.delay-75  { transition-delay: 75ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-225 { transition-delay: 225ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Accessibility: respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Halaman Utama / Beranda -->
+  <url>
+    <loc>https://cahayamustika.com/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Halaman Produk: Smart Board Hikvision -->
+  <url>
+    <loc>https://cahayamustika.com/produk-hikvision.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Halaman Produk: Smart Board ZELT -->
+  <url>
+    <loc>https://cahayamustika.com/produk-zelt.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Halaman Produk: Smart Board Samsung -->
+  <url>
+    <loc>https://cahayamustika.com/produk-samsung.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Halaman Portofolio Proyek & Dokumentasi -->
+  <url>
+    <loc>https://cahayamustika.com/portofolio.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Halaman Artikel & Edukasi Smart Board -->
+  <url>
+    <loc>https://cahayamustika.com/artikel.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Halaman Detail Panduan Artikel -->
+  <url>
+    <loc>https://cahayamustika.com/artikel-detail.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Halaman Spesifikasi Teknis Produk -->
+  <url>
+    <loc>https://cahayamustika.com/spesifikasi.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Halaman Kontak & Konsultasi Resmi -->
+  <url>
+    <loc>https://cahayamustika.com/kontak.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

@@ -8,8 +8,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initFaqAccordion();
+  initBrandTabs();
   initPortfolioBento();
   initSeriesNavScrollSpy();
+  initScrollReveal();
 });
 
 // -------------------------------------------------------------
@@ -101,6 +103,44 @@ function initFaqAccordion() {
         trigger.setAttribute('aria-expanded', 'true');
         if (icon) icon.style.transform = 'rotate(180deg)';
       }
+    });
+  });
+}
+
+// -------------------------------------------------------------
+// 2B. BRAND SHOWCASE TABS (HIKVISION, ZELT, SAMSUNG)
+// -------------------------------------------------------------
+function initBrandTabs() {
+  const tabBtns = document.querySelectorAll('.brand-tab-btn');
+  const panels = document.querySelectorAll('.brand-panel');
+  if (!tabBtns.length || !panels.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      if (!targetId) return;
+
+      // Update buttons
+      tabBtns.forEach(b => {
+        b.classList.remove('active', 'bg-navy-deep', 'border-navy-deep', 'text-white', 'shadow-md');
+        b.classList.add('bg-white', 'border-slate-200', 'text-slate-700', 'shadow-xs');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      btn.classList.add('active', 'bg-navy-deep', 'border-navy-deep', 'text-white', 'shadow-md');
+      btn.classList.remove('bg-white', 'border-slate-200', 'text-slate-700', 'shadow-xs');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Update panels
+      panels.forEach(p => {
+        if (p.id === targetId) {
+          p.classList.remove('hidden');
+          p.classList.add('block');
+        } else {
+          p.classList.add('hidden');
+          p.classList.remove('block');
+        }
+      });
     });
   });
 }
@@ -853,4 +893,81 @@ function initSeriesNavScrollSpy() {
 
   window.addEventListener('scroll', updateActivePill, { passive: true });
   updateActivePill();
+}
+
+// -------------------------------------------------------------
+// 6. SCROLL REVEAL ANIMATIONS (IntersectionObserver Smooth GPU)
+// -------------------------------------------------------------
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const targets = document.querySelectorAll(
+    '.card-clean, .portfolio-card-item, .faq-item, .article-card, .spec-card'
+  );
+
+  if (!targets.length) return;
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const parents = new Set();
+
+  targets.forEach(target => {
+    target.classList.add('scroll-reveal');
+
+    // Jika elemen sudah berada dalam viewport pada initial load, tampilkan langsung tanpa delay
+    const rect = target.getBoundingClientRect();
+    if (rect.top < windowHeight * 0.95 && rect.bottom > 0) {
+      target.classList.add('is-revealed');
+      target.classList.add('reveal-completed');
+      return;
+    }
+
+    if (target.parentElement) {
+      parents.add(target.parentElement);
+    }
+  });
+
+  // Hitung stagger cascade delay berirama halus untuk elemen sejajar dalam satu grid/flex
+  parents.forEach(parent => {
+    const children = parent.querySelectorAll(':scope > .scroll-reveal:not(.is-revealed)');
+    if (children.length > 1 && children.length <= 8) {
+      children.forEach((child, idx) => {
+        const delay = Math.min((idx % 4) * 75, 225);
+        if (delay > 0) {
+          child.style.transitionDelay = `${delay}ms`;
+        }
+      });
+    }
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.classList.add('is-revealed');
+
+        // Setelah animasi selesai, lepaskan transform agar efek hover berjalan 100% lancar
+        const onEnd = (e) => {
+          if (e.propertyName === 'transform') {
+            el.classList.add('reveal-completed');
+            el.style.transitionDelay = '';
+            el.removeEventListener('transitionend', onEnd);
+          }
+        };
+        el.addEventListener('transitionend', onEnd);
+
+        obs.unobserve(el);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px 40px 0px', // Mulai meluncur halus sebelum melewati tepi bawah layar
+    threshold: 0.05
+  });
+
+  targets.forEach(target => {
+    if (!target.classList.contains('is-revealed')) {
+      observer.observe(target);
+    }
+  });
 }

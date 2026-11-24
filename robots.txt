@@ -1,0 +1,7 @@
+# Robots.txt for CV Cahaya Mustika - Official Smart Board Solutions
+# Allow all search engine crawlers (Googlebot, Bingbot, etc.)
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://cahayamustika.com/sitemap.xml

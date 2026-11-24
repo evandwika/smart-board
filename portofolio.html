@@ -198,19 +198,20 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO GRID (SEO-Friendly: Image -> Title -> Description Tanpa Lokasi) -->
-    <section class="py-16 bg-white border-b border-soft-border" aria-labelledby="portfolio-header-title">
+    <!-- PORTFOLIO SHOWCASE (Konsep Baru: Editorial Horizontal Case Study Flow) -->
+    <section class="py-16 sm:py-24 bg-soft-gray border-b border-soft-border" aria-labelledby="portfolio-header-title">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 2-Column Horizontal Showcase Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           
           <!-- Item 1: VIP Boardroom Acoustic Wall -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="bumn">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-vip-installation.webp" alt="Instalasi Wall Mount Panel Kayu Akustik Ruang Rapat VIP" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-vip-installation.webp" alt="Instalasi Wall Mount Panel Kayu Akustik Ruang Rapat VIP" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Instalasi Wall Mount Panel Akustik Ruang Rapat VIP
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
@@ -220,166 +221,166 @@
           </article>
 
           <!-- Item 2: Smart Classroom -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="education">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-smart-classroom-min2.webp" alt="Papan Tulis Interaktif Mobile Stand di Ruang Kelas Digital" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-smart-classroom-min2.webp" alt="Papan Tulis Interaktif Mobile Stand di Ruang Kelas Digital" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Papan Tulis Interaktif Mobile Stand di Ruang Kelas Digital
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Penggunaan mobile stand memungkinkan Smart Board dipindahkan sesuai kebutuhan ruang kelas. Guru dapat menampilkan materi, menulis catatan, dan mengajak siswa berinteraksi langsung pada layar sesuai fitur model yang digunakan.
+                Penggunaan mobile stand memungkinkan Smart Board dipindahkan sesuai kebutuhan ruang kelas. Guru dapat menampilkan materi, menulis catatan, dan mengajak siswa berinteraksi langsung pada layar.
               </p>
             </div>
           </article>
 
-          <!-- Item 3: Aktivitas Belajar Siswa -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="education">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-interactive-learning-min2.webp" alt="Aktivitas Belajar Kolaboratif Multi-Touch Layar Sentuh Digital" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 3: Aktivitas Belajar Siswa (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-interactive-learning-min2.webp" alt="Aktivitas Belajar Kolaboratif Multi-Touch Layar Sentuh Digital" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Aktivitas Belajar Kolaboratif Multi-Touch Layar Sentuh Digital
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Fitur multi-touch pada model yang mendukungnya memungkinkan beberapa pengguna menulis atau berinteraksi pada layar secara bersamaan. Aktivitas ini dapat dimanfaatkan untuk diskusi kelompok, latihan, dan pemecahan masalah di kelas.
+                Fitur multi-touch memungkinkan beberapa pengguna menulis atau berinteraksi pada layar secara bersamaan untuk diskusi kelompok, latihan, dan pemecahan masalah di kelas.
               </p>
             </div>
           </article>
 
-          <!-- Item 4: Dual ZELT Training Room -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="government">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-dual-zelt-screens.webp" alt="Konfigurasi Layar Ganda (Dual Display) Ruang Pelatihan &amp; Workshop" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 4: Dual ZELT Training Room (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-dual-zelt-screens.webp" alt="Konfigurasi Layar Ganda (Dual Display) Ruang Pelatihan &amp; Workshop" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Konfigurasi Layar Ganda (Dual Display) Ruang Pelatihan &amp; Workshop
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Konfigurasi dua Smart Board dapat digunakan ketika ruang pelatihan membutuhkan area tampilan tambahan. Pengaturan materi pada masing-masing layar disesuaikan dengan alur presentasi dan perangkat yang digunakan.
+                Konfigurasi dua Smart Board dapat digunakan ketika ruang pelatihan membutuhkan area tampilan tambahan. Pengaturan materi disesuaikan dengan alur presentasi dan perangkat yang digunakan.
               </p>
             </div>
           </article>
 
           <!-- Item 5: Corporate Discussion Room -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="bumn">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-corporate-meeting.webp" alt="Rapat Koordinasi Manajemen &amp; Screen Sharing Nirkabel" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-corporate-meeting.webp" alt="Rapat Koordinasi Manajemen &amp; Screen Sharing Nirkabel" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Rapat Koordinasi Manajemen &amp; Screen Sharing Nirkabel
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Pada model yang mendukung screen sharing, peserta rapat dapat menampilkan materi dari perangkat yang kompatibel ke Smart Board. Fitur ini membantu diskusi dokumen dan penyampaian ide berlangsung lebih praktis.
+                Peserta rapat dapat menampilkan materi dari perangkat yang kompatibel ke Smart Board secara nirkabel untuk memudahkan pembahasan dokumen dan data kerja secara praktis.
               </p>
             </div>
           </article>
 
           <!-- Item 6: Complete Conference Setup -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="bumn">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-complete-conference-setup.webp" alt="Penataan Ruang Konferensi Video Hybrid Terintegrasi" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-complete-conference-setup.webp" alt="Penataan Ruang Konferensi Video Hybrid Terintegrasi" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Penataan Ruang Konferensi Video Hybrid Terintegrasi
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Smart Board dapat menjadi pusat tampilan materi dalam ruang meeting hybrid. Kamera, mikrofon, dan perangkat konferensi tambahan dapat dipilih secara terpisah sesuai kebutuhan serta kompatibilitas sistem.
+                Smart Board dapat menjadi pusat tampilan materi dalam ruang meeting hybrid. Kamera, mikrofon, dan perangkat konferensi tambahan diintegrasikan rapi sesuai kebutuhan sistem.
               </p>
             </div>
           </article>
 
-          <!-- Item 7: ZELT Mobile Showroom -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="bumn">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-zelt-mobile-showroom.webp" alt="Layar Interaktif Mobile Standee untuk Presentasi Produk" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 7: ZELT Mobile Showroom (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-zelt-mobile-showroom.webp" alt="Layar Interaktif Mobile Standee untuk Presentasi Produk" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Layar Interaktif Mobile Standee untuk Presentasi Produk
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Mobile stand membantu memindahkan Smart Board antar area presentasi atau ruang kerja. Roda pengunci menjaga posisi perangkat tetap stabil saat digunakan, sesuai spesifikasi stand yang dipilih.
+                Mobile stand membantu memindahkan Smart Board antar area presentasi atau pameran. Roda pengunci menjaga posisi perangkat tetap stabil saat digunakan.
               </p>
             </div>
           </article>
 
-          <!-- Item 8: Auditorium Mobile Smart Board -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="education">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-auditorium-mobile.webp" alt="Layar Interaktif Besar di Ruang Kuliah Umum &amp; Auditorium" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 8: Auditorium Mobile Smart Board (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-auditorium-mobile.webp" alt="Layar Interaktif Besar di Ruang Kuliah Umum &amp; Auditorium" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Layar Interaktif Besar di Ruang Kuliah Umum &amp; Auditorium
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Untuk aula atau ruang pertemuan besar, pemilihan ukuran Smart Board perlu mempertimbangkan jarak pandang dan tata tempat duduk. Ukuran layar serta karakteristik tampilan sebaiknya disesuaikan dengan kondisi ruangan.
+                Untuk aula atau ruang pertemuan besar, pemilihan ukuran Smart Board mempertimbangkan jarak pandang serta tata tempat duduk agar materi tetap terbaca jelas.
               </p>
             </div>
           </article>
 
           <!-- Item 9: Mobile Trolley Hall Instansi -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="government">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-mobile-trolley-hall.webp" alt="Smart Board Mobile Trolley di Ruang Pertemuan Serbaguna" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-mobile-trolley-hall.webp" alt="Smart Board Mobile Trolley di Ruang Pertemuan Serbaguna" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Smart Board Mobile Trolley di Ruang Pertemuan Serbaguna
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Smart Board dengan mobile trolley dapat digunakan secara fleksibel di ruang serbaguna untuk presentasi, pemutaran materi, dan diskusi. Ketersediaan whiteboard serta sistem operasi mengikuti model perangkat.
+                Smart Board dengan mobile trolley dapat digunakan secara fleksibel di ruang serbaguna untuk presentasi, pemutaran video dinamis, dan diskusi koordinasi antar unit.
               </p>
             </div>
           </article>
 
           <!-- Item 10: Executive Office Wallmount -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="government">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-executive-office.webp" alt="Instalasi Wall Mount di Ruang Kerja Pimpinan Eksekutif" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-executive-office.webp" alt="Instalasi Wall Mount di Ruang Kerja Pimpinan Eksekutif" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Instalasi Wall Mount di Ruang Kerja Pimpinan Eksekutif
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Pemasangan di ruang kerja pimpinan menyediakan area khusus untuk menampilkan dokumen, membahas laporan, dan melakukan diskusi bersama tim. Penempatan perangkat disesuaikan dengan ukuran ruangan serta jarak pandang pengguna.
+                Pemasangan di ruang kerja pimpinan menyediakan area privat untuk menelaah dokumen, laporan metrik performa, dan diskusi tertutup bersama tim manajemen.
               </p>
             </div>
           </article>
 
-          <!-- Item 11: Wallmount Meeting Presisi -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="government">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-wallmount-meeting.webp" alt="Pemasangan Braket Dinding Ergonomis Ruang Diskusi Tim" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 11: Wallmount Meeting Presisi (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-wallmount-meeting.webp" alt="Pemasangan Braket Dinding Ergonomis Ruang Diskusi Tim" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Pemasangan Braket Dinding Ergonomis Ruang Diskusi Tim
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Ketinggian pemasangan Smart Board perlu disesuaikan dengan posisi pengguna, baik saat duduk maupun berdiri. Penataan yang tepat membantu layar mudah dijangkau dan dilihat selama diskusi.
+                Ketinggian pemasangan Smart Board disesuaikan secara cermat dengan posisi duduk maupun berdiri pengguna agar layar nyaman dijangkau dan mudah dilihat selama sesi diskusi.
               </p>
             </div>
           </article>
 
-          <!-- Item 12: Whiteboard Testing & Touch Calibration -->
-          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200 rounded-2xl hover:border-navy transition duration-300 bg-white shadow-xs" data-category="education">
-            <div class="bg-slate-100 overflow-hidden h-60 sm:h-64">
-              <img src="assets/images/portfolio/portfolio-whiteboard-testing.webp" alt="Uji Kalibrasi Sentuh &amp; Whiteboard Digital Presisi Tinggi" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" width="400" height="260" loading="lazy">
+          <!-- Item 12: Whiteboard Testing & Touch Calibration (Alternating: Text | Photo on Desktop) -->
+          <article class="portfolio-card-item card-clean overflow-hidden group border border-slate-200/90 rounded-2xl hover:border-navy transition-all duration-300 bg-white shadow-sm hover:shadow-xl flex flex-col sm:flex-row-reverse">
+            <div class="w-full sm:w-1/2 overflow-hidden bg-slate-100 min-h-[220px] sm:min-h-[260px]">
+              <img src="assets/images/portfolio/portfolio-whiteboard-testing.webp" alt="Uji Kalibrasi Sentuh &amp; Whiteboard Digital Presisi Tinggi" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" width="500" height="350" loading="lazy">
             </div>
-            <div class="p-6 space-y-2.5">
-              <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
+            <div class="w-full sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center space-y-3">
+              <h3 class="text-base sm:text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading leading-snug">
                 Uji Kalibrasi Sentuh &amp; Whiteboard Digital Presisi Tinggi
               </h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-body">
-                Sebelum perangkat digunakan, fungsi utama seperti tampilan, sentuhan, penulisan digital, konektivitas, dan aksesori pendukung dapat diperiksa sesuai fitur model. Pengujian membantu memastikan perangkat siap digunakan.
+                Sebelum diserahkan kepada pengguna, fungsi utama seperti tampilan visual, respon sentuh nol-latensi, penulisan whiteboard, dan audio-konektivitas diuji secara menyeluruh.
               </p>
             </div>
           </article>
