@@ -5,6 +5,12 @@
  * and Centralized Product Specification Database.
  */
 
+// Clean URL: Hapus 'index.html' dari address bar jika pengguna membuka langsung file index.html
+if (typeof window !== 'undefined' && window.location.pathname.endsWith('/index.html')) {
+  const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
+  window.history.replaceState(null, '', cleanPath);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initFaqAccordion();
@@ -12,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioBento();
   initSeriesNavScrollSpy();
   initScrollReveal();
+  initProductSpecViewer();
 });
 
 // -------------------------------------------------------------
@@ -971,3 +978,132 @@ function initScrollReveal() {
     }
   });
 }
+
+// -------------------------------------------------------------
+// 8. INTERACTIVE PRODUCT SPECIFICATION VIEWER
+// -------------------------------------------------------------
+function initProductSpecViewer() {
+  const specSection = document.getElementById('product-spec-section');
+  if (!specSection) return;
+
+  const heroSection = document.getElementById('brand-hero-section');
+  const seriesNav = document.getElementById('series-nav-bar');
+  const catalogSection = document.getElementById('products-catalog-section');
+
+  const specImg = document.getElementById('specProductImage');
+  const specBadge = document.getElementById('specProductBadge');
+  const specTitle = document.getElementById('specProductTitle');
+  const specBcTitle = document.getElementById('specBcProductName');
+  const specTableBody = document.getElementById('specTableBody');
+  const specBtnWa = document.getElementById('specBtnWhatsApp');
+
+  const originalDocTitle = document.title;
+
+  function showProductSpec(productId, shouldPushState = false) {
+    if (typeof productDatabase === 'undefined' || !productDatabase[productId]) return;
+    const prod = productDatabase[productId];
+
+    if (specTitle) specTitle.textContent = prod.title;
+    if (specBcTitle) specBcTitle.textContent = prod.title;
+    if (specBadge) specBadge.textContent = prod.category || 'SMART BOARD';
+    if (specImg) {
+      const isSub = window.location.pathname.includes('/smart-board-');
+      const prefix = isSub ? '../' : '';
+      specImg.src = prefix + prod.image;
+      specImg.alt = prod.title;
+    }
+
+    if (specBtnWa) {
+      const waText = encodeURIComponent('Halo CV Cahaya Mustika, saya ingin konsultasi spesifikasi dan penawaran resmi untuk produk ' + prod.title + '.');
+      specBtnWa.href = 'https://wa.me/628113301819?text=' + waText;
+    }
+
+    if (specTableBody) {
+      specTableBody.innerHTML = '';
+      if (prod.specs && Array.isArray(prod.specs)) {
+        prod.specs.forEach(s => {
+          const row = document.createElement('div');
+          row.className = 'py-3 flex items-center justify-between gap-4 text-xs sm:text-sm border-b border-slate-100 last:border-0';
+          row.innerHTML = '<span class="text-slate-500 font-medium">' + s.label + '</span>' +
+                          '<span class="text-slate-900 font-bold text-right">' + s.value + '</span>';
+          specTableBody.appendChild(row);
+        });
+      }
+    }
+
+    // Hide Hero, Series Nav (Pilihan Seri), and Catalog
+    if (heroSection) heroSection.classList.add('hidden');
+    if (seriesNav) seriesNav.classList.add('hidden');
+    if (catalogSection) catalogSection.classList.add('hidden');
+
+    // Show Dedicated Spec View
+    specSection.classList.remove('hidden');
+    document.title = prod.title + ' | CV Cahaya Mustika';
+
+    if (shouldPushState) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('id', productId);
+      window.history.pushState({ productId }, '', url.toString());
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function hideProductSpec(shouldPushState = true) {
+    if (heroSection) heroSection.classList.remove('hidden');
+    if (seriesNav) seriesNav.classList.remove('hidden');
+    if (catalogSection) catalogSection.classList.remove('hidden');
+
+    specSection.classList.add('hidden');
+    document.title = originalDocTitle;
+    if (shouldPushState) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('id');
+      window.history.pushState({}, '', url.pathname + (url.hash || ''));
+    }
+  }
+
+  // Bind click on breadcrumb brand link to return to catalog
+  const bcBrandLink = specSection.querySelector('nav a[href="./"]');
+  if (bcBrandLink) {
+    bcBrandLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideProductSpec(true);
+    });
+  }
+
+  // Bind click on all buttons with data-product-id or href with ?id=
+  document.querySelectorAll('a[data-product-id], a[href*="?id="]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      let prodId = link.getAttribute('data-product-id');
+      if (!prodId && href.includes('?id=')) {
+        const parts = href.split('?id=');
+        prodId = parts[1].split('&')[0];
+      }
+      if (prodId && typeof productDatabase !== 'undefined' && productDatabase[prodId]) {
+        e.preventDefault();
+        showProductSpec(prodId, true);
+      }
+    });
+  });
+
+  // Check URL params on initial load
+  const initialParams = new URLSearchParams(window.location.search);
+  const initialId = initialParams.get('id');
+  if (initialId && typeof productDatabase !== 'undefined' && productDatabase[initialId]) {
+    showProductSpec(initialId, false);
+  }
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', (e) => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (id && typeof productDatabase !== 'undefined' && productDatabase[id]) {
+      showProductSpec(id, false);
+    } else {
+      hideProductSpec(false);
+    }
+  });
+}
+

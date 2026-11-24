@@ -8,23 +8,30 @@
   <meta name="keywords" content="artikel smart board, tips memilih smart board, smart board vs proyektor, panduan e-katalog smart board, smart classroom indonesia, harga smart board 4k">
   <meta name="author" content="Cahaya Mustika Office Equipment Center">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://cahayamustika.com/artikel.html">
+  <link rel="canonical" href="https://cahayamustika.com/artikel/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cahayamustika.com/artikel.html">
+  <meta property="og:url" content="https://cahayamustika.com/artikel/">
   <meta property="og:title" content="Artikel &amp; Panduan Memilih Smart Board | Cahaya Mustika Blog">
   <meta property="og:description" content="Kumpulan artikel edukatif, panduan teknis, dan perbandingan spesifikasi layar interaktif untuk kantor dan kampus.">
   <meta property="og:image" content="https://cahayamustika.com/assets/images/cahaya-mustika-logo.webp">
 
   <!-- Favicon & Fonts -->
-  <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
+  <link rel="icon" type="image/webp" href="../assets/images/favicon.webp">
   <meta name="theme-color" content="#002B9A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN & Styles -->
+    <script>
+    // Clean URL: Hapus 'index.html' dari address bar jika pengguna membuka langsung file index.html
+    if (window.location.pathname.endsWith('/index.html')) {
+      const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
+      window.history.replaceState(null, '', cleanPath);
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -52,7 +59,7 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- Schema.org Blog & BreadcrumbList Structured Data -->
   <script type="application/ld+json">
@@ -61,9 +68,9 @@
     "@graph": [
       {
         "@type": "Blog",
-        "@id": "https://cahayamustika.com/artikel.html#blog",
+        "@id": "https://cahayamustika.com/artikel/#blog",
         "name": "Artikel & Panduan Smart Board | Cahaya Mustika Blog",
-        "url": "https://cahayamustika.com/artikel.html",
+        "url": "https://cahayamustika.com/artikel/",
         "description": "Pusat edukasi dan panduan seputar Smart Board, Smart Board, teknologi smart classroom, dan komparasi spesifikasi.",
         "publisher": {
           "@type": "Organization",
@@ -87,32 +94,32 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Artikel",
-            "item": "https://cahayamustika.com/artikel.html"
+            "item": "https://cahayamustika.com/artikel/"
           }
         ]
       },
       {
         "@type": "ItemList",
-        "@id": "https://cahayamustika.com/artikel.html#articles-list",
+        "@id": "https://cahayamustika.com/artikel/#articles-list",
         "name": "Daftar Artikel Panduan Smart Board",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Panduan Lengkap Memilih Ukuran Smart Board untuk Ruang Meeting Kantor 2026",
-            "url": "https://cahayamustika.com/artikel-detail.html"
+            "url": "https://cahayamustika.com/artikel/panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Smart Board vs Proyektor Interaktif: Mana yang Lebih Efisien Biaya & Tahan Lama?",
-            "url": "https://cahayamustika.com/artikel-detail.html"
+            "url": "https://cahayamustika.com/artikel/smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Tata Cara Pengadaan Smart Board di E-Katalog LKPP & Ketentuan Sertifikasi TKDN",
-            "url": "https://cahayamustika.com/artikel-detail.html"
+            "url": "https://cahayamustika.com/artikel/tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/"
           }
         ]
       }
@@ -123,43 +130,45 @@
 <body class="bg-soft-gray text-slate-800 antialiased font-body flex flex-col min-h-screen">
 
   <!-- Navbar -->
-  <header class="site-header site-header-solid" role="banner">
+  <!-- Main Navigation Bar -->
+  <header class="site-header" role="banner">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/images/cahaya-mustika-logo.webp" alt="Logo Cahaya Mustika" class="h-10 sm:h-12 w-auto object-contain" width="220" height="48">
+        <!-- Brand Logo -->
+        <a href="../" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-navy rounded-lg p-1" aria-label="Beranda Cahaya Mustika">
+          <img src="../assets/images/cahaya-mustika-logo.webp" alt="Logo Cahaya Mustika Office Equipment Center" class="h-10 sm:h-12 w-auto object-contain transition duration-200 group-hover:opacity-95" width="220" height="48">
         </a>
 
-        <!-- DESKTOP NAVIGATION + CTA (KANAN - Sesuai Permintaan 4) -->
+        <!-- DESKTOP NAVIGATION + CTA (KANAN) -->
         <div class="hidden lg:flex items-center gap-6 xl:gap-8">
           <nav class="flex items-center gap-1 xl:gap-2" aria-label="Navigasi Utama">
-            <a href="index.html" class="nav-link">Beranda</a>
+            <a href="../" class="nav-link">Beranda</a>
 
             <!-- Dropdown Produk (Hanya Merek) -->
             <div class="nav-dropdown">
-              <a href="produk-hikvision.html" class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              <a href="../smart-board-hikvision/" class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
                 <span>Produk</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-navy transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </a>
               <div class="nav-dropdown-menu">
-                <a href="produk-hikvision.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="../smart-board-hikvision/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board Hikvision
                 </a>
-                <a href="produk-zelt.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="../smart-board-zelt/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board ZELT
                 </a>
-                <a href="produk-samsung.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="../smart-board-samsung/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board Samsung
                 </a>
               </div>
             </div>
 
-            <a href="portofolio.html" class="nav-link">Portofolio</a>
-            <a href="artikel.html" class="nav-link active" aria-current="page">Artikel</a>
-            <a href="kontak.html" class="nav-link">Kontak Kami</a>
+            <a href="../portofolio/" class="nav-link">Portofolio</a>
+            <a href="../artikel/" class="nav-link active" aria-current="page">Artikel</a>
+            <a href="../kontak/" class="nav-link">Kontak Kami</a>
           </nav>
 
           <!-- Tombol Konsultasi di sebelah kanan navigasi -->
@@ -171,36 +180,39 @@
           </a>
         </div>
 
-        <button id="mobileMenuToggle" type="button" class="lg:hidden p-2 rounded-lg text-navy hover:bg-slate-100" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuToggle" type="button" class="lg:hidden p-2 rounded-lg text-navy hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-navy" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka Menu Navigasi">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
 
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
+    <!-- Mobile Drawer Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
-      <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Beranda</a>
+      <a href="../" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Beranda</a>
       
       <!-- Mobile Produk & Brands Group -->
       <div class="py-1">
-        <a href="produk-hikvision.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Produk</a>
+        <a href="../smart-board-hikvision/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Produk</a>
         <div class="pl-4 pr-2 pt-1 space-y-1">
-          <a href="produk-hikvision.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="../smart-board-hikvision/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board Hikvision
           </a>
-          <a href="produk-zelt.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="../smart-board-zelt/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board ZELT
           </a>
-          <a href="produk-samsung.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="../smart-board-samsung/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board Samsung
           </a>
         </div>
       </div>
 
-      <a href="portofolio.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Portofolio</a>
-      <a href="artikel.html" class="block px-3 py-2 rounded-md font-semibold text-navy bg-navy-subtle">Artikel</a>
-      <a href="kontak.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Kontak Kami</a>
+      <a href="../portofolio/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Portofolio</a>
+      <a href="../artikel/" class="block px-3 py-2 rounded-md font-semibold text-navy bg-navy-subtle">Artikel</a>
+      <a href="../kontak/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Kontak Kami</a>
       
       <div class="pt-4 border-t border-slate-200 space-y-2">
         <a href="https://wa.me/628113301819?text=Halo%20CV%20Cahaya%20Mustika,%20saya%20tertarik%20dengan%20produk%20Smart%20Board." target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-pill !rounded-full w-full justify-center">
@@ -234,7 +246,7 @@
         <div class="card-clean p-6 sm:p-8 mb-12 border-navy bg-gradient-to-br from-white to-blue-50/30">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-5 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center">
-              <img src="assets/images/articles/article-featured-guide.webp" alt="Ilustrasi Panduan Memilih Smart Board 2026" class="w-full h-56 object-cover" width="400" height="250" loading="lazy">
+              <img src="../assets/images/articles/article-featured-guide.webp" alt="Ilustrasi Panduan Memilih Smart Board 2026" class="w-full h-56 object-cover" width="400" height="250" loading="lazy">
             </div>
             <div class="lg:col-span-7 space-y-4">
               <div class="flex items-center gap-3">
@@ -242,13 +254,13 @@
                 <span class="text-xs text-slate-400">15 Februari 2026</span>
               </div>
               <h2 id="featured-article-title" class="text-2xl sm:text-3xl font-extrabold text-navy-deep hover:text-navy transition">
-                <a href="artikel-detail.html">Panduan Lengkap Memilih Ukuran Smart Board untuk Ruang Meeting Kantor 2026</a>
+                <a href="panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/">Panduan Lengkap Memilih Ukuran Smart Board untuk Ruang Meeting Kantor 2026</a>
               </h2>
               <p class="text-sm text-slate-600 leading-relaxed">
                 Ukuran Smart Board sebaiknya disesuaikan dengan luas ruangan, jarak pandang, jumlah peserta, dan jenis materi yang ditampilkan. Pelajari faktor yang perlu dipertimbangkan sebelum memilih ukuran layar untuk ruang meeting.
               </p>
               <div class="pt-2">
-                <a href="artikel-detail.html" class="btn-navy text-xs py-2.5 px-5">
+                <a href="panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/" class="btn-navy text-xs py-2.5 px-5">
                   <span>Baca Selengkapnya</span>
                   <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
@@ -264,14 +276,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-vs-projector.webp" alt="Komparasi Smart Board vs Proyektor Interaktif" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-vs-projector.webp" alt="Komparasi Smart Board vs Proyektor Interaktif" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">Komparasi</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">Smart Board vs Proyektor Interaktif: Mana yang Lebih Efisien Biaya &amp; Tahan Lama?</a>
+                  <a href="smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/">Smart Board vs Proyektor Interaktif: Mana yang Lebih Efisien Biaya &amp; Tahan Lama?</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Kenali perbedaan cara penggunaan, kebutuhan instalasi, perawatan, dan biaya kepemilikan antara Smart Board dan proyektor interaktif. Pertimbangkan kondisi ruangan serta aktivitas yang paling sering dilakukan sebelum menentukan pilihan.
@@ -280,7 +292,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">08 Feb 2026</span>
               </div>
             </div>
@@ -290,14 +302,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-ekatalog-tkdn.webp" alt="Panduan Pengadaan Smart Board E-Katalog LKPP &amp; TKDN" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-ekatalog-tkdn.webp" alt="Panduan Pengadaan Smart Board E-Katalog LKPP &amp; TKDN" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">E-Katalog LKPP</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">Tata Cara Pengadaan Smart Board di E-Katalog LKPP &amp; Ketentuan Sertifikasi TKDN</a>
+                  <a href="tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/">Tata Cara Pengadaan Smart Board di E-Katalog LKPP &amp; Ketentuan Sertifikasi TKDN</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Kenali tahapan umum yang perlu dipersiapkan saat instansi melakukan pengadaan Smart Board melalui platform pengadaan pemerintah. Pastikan spesifikasi, dokumen, dan ketentuan terbaru diperiksa melalui kanal resmi terkait.
@@ -306,7 +318,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">28 Jan 2026</span>
               </div>
             </div>
@@ -316,14 +328,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-dual-os.webp" alt="Fitur Dual OS Android 13 &amp; Windows 11 Smart Board" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-dual-os.webp" alt="Fitur Dual OS Android 13 &amp; Windows 11 Smart Board" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">Teknologi</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">Fitur Unggulan Dual OS Android 13 &amp; Windows 11 pada Smart Board</a>
+                  <a href="fitur-unggulan-dual-os-android-13-dan-windows-11-pada-smart-board/">Fitur Unggulan Dual OS Android 13 &amp; Windows 11 pada Smart Board</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Pelajari perbedaan sistem operasi bawaan dan dukungan modul OPS pada model Smart Board tertentu. Pahami bagaimana pilihan sistem dapat memengaruhi aplikasi dan alur kerja presentasi.
@@ -332,7 +344,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="fitur-unggulan-dual-os-android-13-dan-windows-11-pada-smart-board/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">19 Jan 2026</span>
               </div>
             </div>
@@ -342,14 +354,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-smart-classroom.webp" alt="Penerapan Smart Classroom Interaktif di Kampus" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-smart-classroom.webp" alt="Penerapan Smart Classroom Interaktif di Kampus" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">Smart Classroom</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">5 Alasan Universitas Terkemuka di Indonesia Beralih ke Smart Classroom Interaktif</a>
+                  <a href="5-alasan-universitas-terkemuka-di-indonesia-beralih-ke-smart-classroom-interaktif/">5 Alasan Universitas Terkemuka di Indonesia Beralih ke Smart Classroom Interaktif</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Simak bagaimana Smart Board dapat dimanfaatkan untuk menampilkan materi, menulis penjelasan, dan melibatkan peserta dalam diskusi. Penerapannya perlu disesuaikan dengan metode mengajar dan kebutuhan institusi.
@@ -358,7 +370,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="5-alasan-universitas-terkemuka-di-indonesia-beralih-ke-smart-classroom-interaktif/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">10 Jan 2026</span>
               </div>
             </div>
@@ -368,14 +380,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-screen-mirroring.webp" alt="Screen Mirroring Nirkabel Multi-Perangkat" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-screen-mirroring.webp" alt="Screen Mirroring Nirkabel Multi-Perangkat" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">Tips Ruang Rapat</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">Mengapa Screen Mirroring Nirkabel Menjadi Standar Wajib Rapat Eksekutif 2026</a>
+                  <a href="mengapa-screen-mirroring-nirkabel-menjadi-standar-wajib-rapat-eksekutif-2026/">Mengapa Screen Mirroring Nirkabel Menjadi Standar Wajib Rapat Eksekutif 2026</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Pelajari manfaat screen sharing untuk menampilkan materi dari perangkat yang kompatibel. Kenali hal-hal yang perlu diperiksa, seperti dukungan perangkat, jaringan, dan jumlah tampilan yang dapat dibagikan.
@@ -384,7 +396,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="mengapa-screen-mirroring-nirkabel-menjadi-standar-wajib-rapat-eksekutif-2026/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">03 Jan 2026</span>
               </div>
             </div>
@@ -394,14 +406,14 @@
           <article class="card-clean overflow-hidden flex flex-col justify-between group">
             <div>
               <div class="bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img src="assets/images/articles/article-maintenance.webp" alt="Perawatan Kaca 7H Tempered Glass Smart Board" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
+                <img src="../assets/images/articles/article-maintenance.webp" alt="Perawatan Kaca 7H Tempered Glass Smart Board" class="w-full h-48 sm:h-52 object-cover transition duration-300 group-hover:scale-105" width="400" height="240" loading="lazy">
               </div>
               <div class="p-6 space-y-3">
                 <div class="flex items-center gap-2 text-xs text-slate-400">
                   <span class="badge-tag badge-navy">Perawatan &amp; Garansi</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition">
-                  <a href="artikel-detail.html">Tips Merawat Kaca Anti-Glare Smart Board agar Awet Lebih dari 10 Tahun</a>
+                  <a href="tips-merawat-kaca-anti-glare-smart-board-agar-awet-lebih-dari-10-tahun/">Tips Merawat Kaca Anti-Glare Smart Board agar Awet Lebih dari 10 Tahun</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Ketahui cara merawat permukaan layar, menjaga kebersihan perangkat, dan memeriksa aksesori sesuai petunjuk produsen. Perawatan yang tepat membantu menjaga kenyamanan penggunaan Smart Board.
@@ -410,7 +422,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="tips-merawat-kaca-anti-glare-smart-board-agar-awet-lebih-dari-10-tahun/" class="hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">20 Des 2025</span>
               </div>
             </div>
@@ -430,8 +442,8 @@
         
         <!-- Brand Column with Vertical Logo -->
         <div class="lg:col-span-5 space-y-4">
-          <a href="index.html" class="inline-block">
-            <img src="assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="160" height="96">
+          <a href="../" class="inline-block">
+            <img src="../assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="160" height="96">
           </a>
           <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-body max-w-sm">
             <strong>CV Cahaya Mustika (Office Equipment Center)</strong> adalah penyedia resmi Smart Board interaktif, perlengkapan kantor, dan solusi teknologi ruang rapat &amp; smart classroom di Indonesia.
@@ -442,11 +454,11 @@
         <div class="lg:col-span-3 space-y-4">
           <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Navigasi Utama</h4>
           <ul class="space-y-2.5 text-xs sm:text-sm font-body">
-            <li><a href="index.html" class="hover:text-navy transition font-medium">Beranda</a></li>
-            <li><a href="produk-hikvision.html" class="hover:text-navy transition font-medium">Produk</a></li>
-            <li><a href="portofolio.html" class="hover:text-navy transition font-medium">Portofolio</a></li>
-            <li><a href="artikel.html" class="hover:text-navy transition font-bold text-navy">Artikel</a></li>
-            <li><a href="kontak.html" class="hover:text-navy transition font-medium">Kontak Kami</a></li>
+            <li><a href="../" class="hover:text-navy transition font-medium">Beranda</a></li>
+            <li><a href="../smart-board-hikvision/" class="hover:text-navy transition font-medium">Produk</a></li>
+            <li><a href="../portofolio/" class="hover:text-navy transition font-medium">Portofolio</a></li>
+            <li><a href="../artikel/" class="hover:text-navy transition font-bold text-navy">Artikel</a></li>
+            <li><a href="../kontak/" class="hover:text-navy transition font-medium">Kontak Kami</a></li>
           </ul>
         </div>
 
@@ -501,6 +513,12 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Halaman Utama / Beranda -->
+  <!-- Homepage -->
   <url>
     <loc>https://cahayamustika.com/</loc>
     <lastmod>2026-11-24</lastmod>
@@ -8,67 +8,93 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Halaman Produk: Smart Board Hikvision -->
+  <!-- Brand / Produk Pages -->
   <url>
-    <loc>https://cahayamustika.com/produk-hikvision.html</loc>
+    <loc>https://cahayamustika.com/smart-board-hikvision/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/smart-board-zelt/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/smart-board-samsung/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Halaman Produk: Smart Board ZELT -->
+  <!-- Portofolio -->
   <url>
-    <loc>https://cahayamustika.com/produk-zelt.html</loc>
+    <loc>https://cahayamustika.com/portofolio/</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Halaman Produk: Smart Board Samsung -->
+  <!-- Artikel Hub -->
   <url>
-    <loc>https://cahayamustika.com/produk-samsung.html</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Halaman Portofolio Proyek & Dokumentasi -->
-  <url>
-    <loc>https://cahayamustika.com/portofolio.html</loc>
+    <loc>https://cahayamustika.com/artikel/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Halaman Artikel & Edukasi Smart Board -->
+  <!-- 7 Dedicated Articles -->
   <url>
-    <loc>https://cahayamustika.com/artikel.html</loc>
+    <loc>https://cahayamustika.com/artikel/panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/fitur-unggulan-dual-os-android-13-dan-windows-11-pada-smart-board/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/5-alasan-universitas-terkemuka-di-indonesia-beralih-ke-smart-classroom-interaktif/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/mengapa-screen-mirroring-nirkabel-menjadi-standar-wajib-rapat-eksekutif-2026/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://cahayamustika.com/artikel/tips-merawat-kaca-anti-glare-smart-board-agar-awet-lebih-dari-10-tahun/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
-  <!-- Halaman Detail Panduan Artikel -->
+  <!-- Kontak & Konsultasi -->
   <url>
-    <loc>https://cahayamustika.com/artikel-detail.html</loc>
+    <loc>https://cahayamustika.com/kontak/</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- Halaman Spesifikasi Teknis Produk -->
-  <url>
-    <loc>https://cahayamustika.com/spesifikasi.html</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Halaman Kontak & Konsultasi Resmi -->
-  <url>
-    <loc>https://cahayamustika.com/kontak.html</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
+
+

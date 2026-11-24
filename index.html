@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -29,6 +29,13 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Clean URL: Hapus 'index.html' dari address bar jika pengguna membuka langsung file index.html
+    if (window.location.pathname.endsWith('/index.html')) {
+      const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
+      window.history.replaceState(null, '', cleanPath);
+    }
+  </script>
   <script>
     tailwind.config = {
       theme: {
@@ -128,7 +135,7 @@
             "name": "Bagaimana cara menghubungkan laptop, tablet, atau smartphone ke Smart Board secara nirkabel?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Smart Board mendukung screen sharing nirkabel melalui protokol Miracast, AirPlay, aplikasi bawaan, maupun USB Wireless Dongle. Pengguna dapat menampilkan materi presentasi dari laptop Windows, Mac, iPad, tablet, atau smartphone secara instan tanpa kabel HDMI yang berantakan, bahkan mendukung tampilan multi-layar (split screen) hingga 4–9 perangkat sekaligus untuk perbandingan data."
+              "text": "Smart Board mendukung screen sharing nirkabel melalui protokol Miracast, AirPlay, aplikasi bawaan, maupun USB Wireless Dongle. Pengguna dapat menampilkan materi presentasi dari laptop Windows, Mac, iPad, tablet, atau smartphone secara instan tanpa kabel HDMI yang berantakan, bahkan mendukung tampilan multi-layar (split screen) hingga 4â€“9 perangkat sekaligus untuk perbandingan data."
             }
           },
           {
@@ -144,7 +151,7 @@
             "name": "Ukuran layar Smart Board berapa saja yang tersedia dan bagaimana panduan memilih ukuran yang tepat untuk ruangan?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Smart Board tersedia dalam pilihan ukuran 55 inch, 65 inch, 75 inch, 86 inch, hingga 98 inch. Sebagai panduan: ukuran 55–65 inch sangat cocok untuk huddle room atau ruang meeting kecil 4–8 orang; ukuran 75–86 inch ideal untuk ruang rapat direksi dan ruang kelas 15–35 orang; sedangkan ukuran 98 inch direkomendasikan untuk auditorium, aula serbaguna, dan command center berskala besar."
+              "text": "Smart Board tersedia dalam pilihan ukuran 55 inch, 65 inch, 75 inch, 86 inch, hingga 98 inch. Sebagai panduan: ukuran 55â€“65 inch sangat cocok untuk huddle room atau ruang meeting kecil 4â€“8 orang; ukuran 75â€“86 inch ideal untuk ruang rapat direksi dan ruang kelas 15â€“35 orang; sedangkan ukuran 98 inch direkomendasikan untuk auditorium, aula serbaguna, dan command center berskala besar."
             }
           },
           {
@@ -169,39 +176,39 @@
       <div class="flex items-center justify-between h-20">
         
         <!-- Brand Logo -->
-        <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-navy rounded-lg p-1" aria-label="Beranda Cahaya Mustika">
+        <a href="./" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-navy rounded-lg p-1" aria-label="Beranda Cahaya Mustika">
           <img src="assets/images/cahaya-mustika-logo.webp" alt="Logo Cahaya Mustika Office Equipment Center" class="h-10 sm:h-12 w-auto object-contain transition duration-200 group-hover:opacity-95" width="220" height="48">
         </a>
 
         <!-- DESKTOP NAVIGATION + CTA (KANAN - Sesuai Permintaan 4) -->
         <div class="hidden lg:flex items-center gap-6 xl:gap-8">
           <nav class="flex items-center gap-1 xl:gap-2" aria-label="Navigasi Utama">
-            <a href="index.html" class="nav-link active" aria-current="page">Beranda</a>
+            <a href="./" class="nav-link active" aria-current="page">Beranda</a>
 
             <!-- Dropdown Produk (Hanya Merek) -->
             <div class="nav-dropdown">
-              <a href="produk-hikvision.html" class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              <a href="smart-board-hikvision/" class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
                 <span>Produk</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-navy transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </a>
               <div class="nav-dropdown-menu">
-                <a href="produk-hikvision.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="smart-board-hikvision/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board Hikvision
                 </a>
-                <a href="produk-zelt.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="smart-board-zelt/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board ZELT
                 </a>
-                <a href="produk-samsung.html" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
+                <a href="smart-board-samsung/" class="nav-dropdown-item text-xs sm:text-sm font-semibold text-navy-deep hover:text-navy">
                   Smart Board Samsung
                 </a>
               </div>
             </div>
 
-            <a href="portofolio.html" class="nav-link">Portofolio</a>
-            <a href="artikel.html" class="nav-link">Artikel</a>
-            <a href="kontak.html" class="nav-link">Kontak Kami</a>
+            <a href="portofolio/" class="nav-link">Portofolio</a>
+            <a href="artikel/" class="nav-link">Artikel</a>
+            <a href="kontak/" class="nav-link">Kontak Kami</a>
           </nav>
 
           <!-- Tombol Konsultasi di sebelah kanan navigasi -->
@@ -225,27 +232,27 @@
 
     <!-- Mobile Drawer Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
-      <a href="index.html" class="block px-3 py-2 rounded-md font-semibold text-navy bg-navy-subtle">Beranda</a>
+      <a href="./" class="block px-3 py-2 rounded-md font-semibold text-navy bg-navy-subtle">Beranda</a>
       
       <!-- Mobile Produk & Brands Group -->
       <div class="py-1">
-        <a href="produk-hikvision.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Produk</a>
+        <a href="smart-board-hikvision/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Produk</a>
         <div class="pl-4 pr-2 pt-1 space-y-1">
-          <a href="produk-hikvision.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="smart-board-hikvision/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board Hikvision
           </a>
-          <a href="produk-zelt.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="smart-board-zelt/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board ZELT
           </a>
-          <a href="produk-samsung.html" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
+          <a href="smart-board-samsung/" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-navy hover:bg-slate-50">
             Smart Board Samsung
           </a>
         </div>
       </div>
 
-      <a href="portofolio.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Portofolio</a>
-      <a href="artikel.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Artikel</a>
-      <a href="kontak.html" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Kontak Kami</a>
+      <a href="portofolio/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Portofolio</a>
+      <a href="artikel/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Artikel</a>
+      <a href="kontak/" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:text-navy hover:bg-slate-50">Kontak Kami</a>
       
       <div class="pt-4 border-t border-slate-200 space-y-2">
         <a href="https://wa.me/628113301819?text=Halo%20CV%20Cahaya%20Mustika,%20saya%20tertarik%20dengan%20produk%20Smart%20Board." target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-pill !rounded-full w-full justify-center">
@@ -282,7 +289,7 @@
 
           <!-- Action Buttons (Rata Kiri, Lonjong) -->
           <div class="flex flex-wrap items-center justify-start gap-3.5 pt-1">
-            <a href="produk-hikvision.html" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 shadow-md inline-flex items-center gap-2">
+            <a href="smart-board-hikvision/" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 shadow-md inline-flex items-center gap-2">
               <span>Lihat Produk Smart Board</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
@@ -426,11 +433,11 @@
 
                 <!-- Tombol CTA -->
                 <div class="pt-2 flex flex-wrap items-center gap-3">
-                  <a href="produk-hikvision.html" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
+                  <a href="smart-board-hikvision/" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
                     <span>Lihat Produk Hikvision</span>
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </a>
-                  <a href="kontak.html" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
+                  <a href="kontak/" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
                     <span>Konsultasi Spesifikasi</span>
                   </a>
                 </div>
@@ -460,11 +467,11 @@
 
                 <!-- Tombol CTA -->
                 <div class="pt-2 flex flex-wrap items-center gap-3">
-                  <a href="produk-zelt.html" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
+                  <a href="smart-board-zelt/" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
                     <span>Lihat Produk ZELT</span>
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </a>
-                  <a href="kontak.html" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
+                  <a href="kontak/" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
                     <span>Konsultasi Spesifikasi</span>
                   </a>
                 </div>
@@ -494,11 +501,11 @@
 
                 <!-- Tombol CTA -->
                 <div class="pt-2 flex flex-wrap items-center gap-3">
-                  <a href="produk-samsung.html" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
+                  <a href="smart-board-samsung/" class="btn-navy btn-pill !rounded-full text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md hover:bg-sky-700 transition">
                     <span>Lihat Produk Samsung</span>
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </a>
-                  <a href="kontak.html" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
+                  <a href="kontak/" class="btn-secondary btn-pill !rounded-full text-xs sm:text-sm py-3 px-5 inline-flex items-center gap-2 hover:bg-slate-100 transition">
                     <span>Konsultasi Spesifikasi</span>
                   </a>
                 </div>
@@ -621,7 +628,7 @@
         </div>
 
         <div class="text-center mt-12">
-          <a href="portofolio.html" class="btn-secondary">
+          <a href="portofolio/" class="btn-secondary">
             <span>Lihat Semua Dokumentasi Portofolio</span>
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
@@ -657,7 +664,7 @@
                   <span class="badge-tag badge-navy">Panduan Beli</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading">
-                  <a href="artikel-detail.html">Panduan Lengkap Memilih Ukuran Smart Board untuk Ruang Meeting Kantor 2026</a>
+                  <a href="artikel/panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/">Panduan Lengkap Memilih Ukuran Smart Board untuk Ruang Meeting Kantor 2026</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed font-body">
                   Jangan salah beli! Simak rumus menentukan dimensi layar berdasarkan jarak pandang baris terbelakang dan kapasitas peserta rapat kantor Anda.
@@ -666,7 +673,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="artikel/panduan-lengkap-memilih-ukuran-smart-board-untuk-ruang-meeting-kantor-2026/" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">15 Feb 2026</span>
               </div>
             </div>
@@ -683,7 +690,7 @@
                   <span class="badge-tag badge-navy">Komparasi</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading">
-                  <a href="artikel-detail.html">Smart Board vs Proyektor Interaktif: Mana yang Lebih Efisien Biaya &amp; Tahan Lama?</a>
+                  <a href="artikel/smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/">Smart Board vs Proyektor Interaktif: Mana yang Lebih Efisien Biaya &amp; Tahan Lama?</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed font-body">
                   Perbandingan mendalam total cost of ownership (TCO), perawatan lampu, tingkat ketajaman saat ruangan terang, dan kemudahan kolaborasi multi-user.
@@ -692,7 +699,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="artikel/smart-board-vs-proyektor-interaktif-mana-yang-lebih-efisien-biaya-dan-tahan-lama/" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">08 Feb 2026</span>
               </div>
             </div>
@@ -709,7 +716,7 @@
                   <span class="badge-tag badge-navy">E-Katalog LKPP</span>
                 </div>
                 <h3 class="text-lg font-bold text-navy-deep group-hover:text-navy transition font-heading">
-                  <a href="artikel-detail.html">Tata Cara Pengadaan Smart Board di E-Katalog LKPP &amp; Ketentuan Sertifikasi TKDN</a>
+                  <a href="artikel/tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/">Tata Cara Pengadaan Smart Board di E-Katalog LKPP &amp; Ketentuan Sertifikasi TKDN</a>
                 </h3>
                 <p class="text-xs text-slate-600 leading-relaxed font-body">
                   Langkah-langkah resmi instansi kedinasan, BUMN, dan sekolah dalam melakukan e-purchasing perlengkapan smart classroom secara legal dan transparan.
@@ -718,7 +725,7 @@
             </div>
             <div class="p-6 pt-0">
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-navy font-semibold">
-                <a href="artikel-detail.html" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
+                <a href="artikel/tata-cara-pengadaan-smart-board-di-e-katalog-lkpp-dan-ketentuan-sertifikasi-tkdn/" class="inline-flex items-center gap-1 hover:underline">Baca Selengkapnya &rarr;</a>
                 <span class="text-slate-400 font-normal">28 Jan 2026</span>
               </div>
             </div>
@@ -728,7 +735,7 @@
 
         <!-- Tombol Lihat Semua Artikel di Bawah Artikel (Sesuai Permintaan: Warna Sama Dengan Lihat Semua Portofolio) -->
         <div class="mt-12 text-center">
-          <a href="artikel.html" class="btn-secondary">
+          <a href="artikel/" class="btn-secondary">
             <span>Lihat Semua Artikel</span>
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
@@ -778,7 +785,7 @@
               <svg class="faq-icon w-5 h-5 text-navy flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-body">
-              Smart Board mendukung screen sharing nirkabel melalui protokol Miracast, AirPlay, aplikasi bawaan, maupun USB Wireless Dongle. Pengguna dapat menampilkan materi presentasi dari laptop Windows, Mac, iPad, tablet, atau smartphone secara instan tanpa kabel HDMI yang berantakan, bahkan mendukung tampilan multi-layar (split screen) hingga 4–9 perangkat sekaligus untuk perbandingan data.
+              Smart Board mendukung screen sharing nirkabel melalui protokol Miracast, AirPlay, aplikasi bawaan, maupun USB Wireless Dongle. Pengguna dapat menampilkan materi presentasi dari laptop Windows, Mac, iPad, tablet, atau smartphone secara instan tanpa kabel HDMI yang berantakan, bahkan mendukung tampilan multi-layar (split screen) hingga 4â€“9 perangkat sekaligus untuk perbandingan data.
             </div>
           </div>
 
@@ -798,7 +805,7 @@
               <svg class="faq-icon w-5 h-5 text-navy flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-body">
-              Smart Board tersedia dalam pilihan ukuran 55 inch, 65 inch, 75 inch, 86 inch, hingga 98 inch. Sebagai panduan: ukuran 55–65 inch sangat cocok untuk huddle room atau ruang meeting kecil 4–8 orang; ukuran 75–86 inch ideal untuk ruang rapat direksi dan ruang kelas 15–35 orang; sedangkan ukuran 98 inch direkomendasikan untuk auditorium, aula serbaguna, dan command center berskala besar.
+              Smart Board tersedia dalam pilihan ukuran 55 inch, 65 inch, 75 inch, 86 inch, hingga 98 inch. Sebagai panduan: ukuran 55â€“65 inch sangat cocok untuk huddle room atau ruang meeting kecil 4â€“8 orang; ukuran 75â€“86 inch ideal untuk ruang rapat direksi dan ruang kelas 15â€“35 orang; sedangkan ukuran 98 inch direkomendasikan untuk auditorium, aula serbaguna, dan command center berskala besar.
             </div>
           </div>
 
@@ -842,7 +849,7 @@
             </svg>
             <span>Konsultasi WhatsApp</span>
           </a>
-          <a href="produk-hikvision.html" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-navy font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:scale-105">
+          <a href="smart-board-hikvision/" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-navy font-bold text-xs sm:text-sm border border-white/20 hover:border-white transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:scale-105">
             <span>Lihat Produk</span>
             <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
@@ -859,7 +866,7 @@
         
         <!-- Brand Column with Vertical Logo -->
         <div class="lg:col-span-5 space-y-4">
-          <a href="index.html" class="inline-block">
+          <a href="./" class="inline-block">
             <img src="assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="160" height="96">
           </a>
           <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-body max-w-sm">
@@ -871,11 +878,11 @@
         <div class="lg:col-span-3 space-y-4">
           <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Navigasi Utama</h4>
           <ul class="space-y-2.5 text-xs sm:text-sm font-body">
-            <li><a href="index.html" class="hover:text-navy transition font-medium">Beranda</a></li>
-            <li><a href="produk-hikvision.html" class="hover:text-navy transition font-medium">Produk</a></li>
-            <li><a href="portofolio.html" class="hover:text-navy transition font-medium">Portofolio</a></li>
-            <li><a href="artikel.html" class="hover:text-navy transition font-medium">Artikel</a></li>
-            <li><a href="kontak.html" class="hover:text-navy transition font-medium">Kontak Kami</a></li>
+            <li><a href="./" class="hover:text-navy transition font-medium">Beranda</a></li>
+            <li><a href="smart-board-hikvision/" class="hover:text-navy transition font-medium">Produk</a></li>
+            <li><a href="portofolio/" class="hover:text-navy transition font-medium">Portofolio</a></li>
+            <li><a href="artikel/" class="hover:text-navy transition font-medium">Artikel</a></li>
+            <li><a href="kontak/" class="hover:text-navy transition font-medium">Kontak Kami</a></li>
           </ul>
         </div>
 
@@ -923,8 +930,8 @@
         </div>
         <div class="flex items-center gap-4">
           <span>Malang, Jawa Timur, Indonesia</span>
-          <span>•</span>
-          <span class="text-slate-500">Tema Terang • Soft Gray &amp; Navy Blue</span>
+          <span>â€¢</span>
+          <span class="text-slate-500">Tema Terang â€¢ Soft Gray &amp; Navy Blue</span>
         </div>
       </div>
     </div>
@@ -935,3 +942,6 @@
 
 </body>
 </html>
+
+
+
