@@ -1,12 +1,10 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    CAHAYA MUSTIKA - SMART BOARD OFFICIAL SOLUTIONS
    Design System:
-   - Headings: Manrope
+   - Headings: Plus Jakarta Sans
    - Body & Elements: Poppins
    - Color Theme: Light Theme (Soft Gray & Navy Blue)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   /* Color Palette */
@@ -34,7 +32,7 @@
   --color-gold: #D97706;
 
   /* Typography */
-  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Transitions & Shadows */
@@ -154,24 +152,24 @@ p, span, a, li, input, textarea, button, select, label {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #25D366;
-  color: #FFFFFF;
-  font-weight: 600;
+  background-color: #15803D;
+  color: #FFFFFF !important;
+  font-weight: 700;
   font-size: 0.95rem;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
-  border: 1px solid #20BA5A;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+  border: 1px solid #166534;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3);
   transition: var(--transition-smooth);
   cursor: pointer;
   text-decoration: none;
 }
 
 .btn-whatsapp:hover {
-  background-color: #1EBE5D;
+  background-color: #166534;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.38);
-  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(22, 101, 52, 0.4);
+  color: #FFFFFF !important;
 }
 
 /* Button Pill Shape (Lonjong) */
@@ -387,7 +385,15 @@ p, span, a, li, input, textarea, button, select, label {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .portfolio-bento-card:hover .bento-bg-img,
@@ -474,4 +480,12 @@ p, span, a, li, input, textarea, button, select, label {
     transition: none !important;
     will-change: auto !important;
   }
+}
+
+/* ==========================================================================
+   PERFORMANCE & CLS STABILIZATION (Lighthouse Core Web Vitals)
+   ========================================================================== */
+#hero-title {
+  min-height: 2.36em;
+  font-display: swap;
 }

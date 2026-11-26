@@ -33,7 +33,11 @@
   <meta name="theme-color" content="#002B9A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+  </noscript>
 
   <!-- Clean URL & Tailwind CSS -->
   <script>
@@ -261,32 +265,23 @@
 
   <main id="main-content" class="flex-grow">
     
-    <!-- HERO HEADER: KONTAK KAMI -->
-    <section id="contact-hero" class="bg-gradient-to-b from-white via-soft-gray to-slate-100 py-10 sm:py-14 border-b border-soft-border" aria-labelledby="contact-hero-title">
+    <!-- HERO HEADER: INFORMASI SHOWROOM & KONTAK -->
+    <section id="contact-hero" class="bg-gradient-to-b from-white via-soft-gray to-slate-100 py-12 sm:py-16 border-b border-soft-border" aria-labelledby="contact-hero-title">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="max-w-3xl mx-auto space-y-3">
+        <div class="max-w-4xl mx-auto space-y-3.5">
           <h1 id="contact-hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-deep font-heading tracking-tight leading-tight">
-            Kontak Kami
+            Informasi Showroom, WhatsApp Resmi &amp; Lokasi Kantor
           </h1>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-body">
-            Kunjungi showroom kami di Malang atau hubungi kami melalui WhatsApp untuk konsultasi dan demo unit Smart Board.
+          <p class="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-body max-w-3xl mx-auto">
+            Hubungi konsultan Smart Board kami untuk konsultasi spesifikasi teknis, jadwal demo unit di showroom Malang, dan penawaran resmi.
           </p>
         </div>
       </div>
     </section>
 
     <!-- SECTION: ALAMAT, WHATSAPP & PETA GOOGLE MAPS -->
-    <section id="contact-details" class="py-12 sm:py-16 bg-white" aria-labelledby="contact-info-title">
+    <section id="contact-details" class="py-12 sm:py-16 bg-white" aria-label="Detail Kontak dan Lokasi Showroom">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-2">
-          <h2 id="contact-info-title" class="text-2xl sm:text-3xl font-extrabold text-navy-deep font-heading">
-            Informasi Showroom, WhatsApp Resmi &amp; Lokasi Kantor
-          </h2>
-          <p class="text-slate-600 text-sm sm:text-base font-body">
-            Hubungi konsultan Smart Board kami untuk konsultasi spesifikasi teknis, jadwal demo unit di showroom Malang, dan penawaran resmi.
-          </p>
-        </div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           <!-- KOLOM KIRI: ALAMAT & WHATSAPP -->
@@ -386,7 +381,7 @@
         <!-- Brand Column with Vertical Logo -->
         <div class="lg:col-span-5 space-y-4">
           <a href="../" class="inline-block">
-            <img src="../assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="160" height="96">
+            <img src="../assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="101" height="96">
           </a>
           <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-body max-w-sm">
             Jual Smart Board untuk Kebutuhan Bisnis dan Pendidikan.
@@ -395,7 +390,7 @@
 
         <!-- Navigation Links -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Informasi Perusahaan</h4>
+          <h3 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Informasi Perusahaan</h3>
           <ul class="space-y-2.5 text-xs sm:text-sm font-body">
             <li><a href="../" class="hover:text-navy transition font-medium">Beranda</a></li>
             <li><a href="../smart-board-hikvision/" class="hover:text-navy transition font-medium">Produk</a></li>
@@ -407,7 +402,7 @@
 
         <!-- Contact & Address (Hanya Alamat & WhatsApp) -->
         <div class="lg:col-span-4 space-y-4">
-          <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Kontak Kami</h4>
+          <h3 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Kontak Kami</h3>
           <div class="space-y-3.5 text-xs sm:text-sm text-slate-600 font-body">
             <div class="flex items-start gap-3">
               <div class="w-8 h-8 rounded-lg bg-blue-50 text-navy flex items-center justify-center shrink-0 mt-0.5">
@@ -417,7 +412,7 @@
                 </svg>
               </div>
               <div class="leading-relaxed">
-                <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider">Alamat Showroom &amp; Kantor:</span>
+                <span class="text-xs font-semibold text-slate-600 block uppercase tracking-wider">Alamat Showroom &amp; Kantor:</span>
                 <span class="text-slate-700">Jl. M.T. Haryono, Ruko Istana Dinoyo B11, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</span>
               </div>
             </div>
@@ -430,7 +425,7 @@
                 </svg>
               </div>
               <div class="leading-relaxed">
-                <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider">WhatsApp Resmi:</span>
+                <span class="text-xs font-semibold text-slate-600 block uppercase tracking-wider">WhatsApp Resmi:</span>
                 <a href="https://wa.me/628113301819" target="_blank" rel="noopener noreferrer" class="text-navy hover:text-navy-light font-bold text-sm tracking-wide transition">
                   +62 811-330-1819
                 </a>
@@ -442,7 +437,7 @@
       </div>
 
       <!-- Copyright Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <div>
           &copy; 2026 <strong>CV Cahaya Mustika Office Equipment Center</strong>. Hak Cipta Dilindungi Undang-Undang.
         </div>

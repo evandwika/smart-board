@@ -40,7 +40,16 @@ function initNavbar() {
     }
   }
 
-  window.addEventListener('scroll', updateNavbar, { passive: true });
+  let navTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!navTicking) {
+      window.requestAnimationFrame(() => {
+        updateNavbar();
+        navTicking = false;
+      });
+      navTicking = true;
+    }
+  }, { passive: true });
   updateNavbar();
 
   if (mobileToggle && mobileMenu) {
@@ -898,7 +907,16 @@ function initSeriesNavScrollSpy() {
     }
   }
 
-  window.addEventListener('scroll', updateActivePill, { passive: true });
+  let spyTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!spyTicking) {
+      window.requestAnimationFrame(() => {
+        updateActivePill();
+        spyTicking = false;
+      });
+      spyTicking = true;
+    }
+  }, { passive: true });
   updateActivePill();
 }
 

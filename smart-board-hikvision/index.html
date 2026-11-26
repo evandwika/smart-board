@@ -65,9 +65,13 @@
   </script>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+  </noscript>
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -597,6 +601,98 @@
       </div><!-- /.max-w-7xl -->
     </section>
 
+  
+    <!-- SECTION: CALL TO ACTION (CTA) (Modern Ambient Tech Showcase) -->
+    <section id="konsultasi-cta" class="py-20 sm:py-28 bg-gradient-to-b from-[#001449] via-[#00227a] to-[#001038] text-white text-center relative overflow-hidden border-b border-soft-border" aria-labelledby="cta-title">
+      <!-- High-Tech Ambient Grid & Glow Effects -->
+      <div class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-sky-400/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6 sm:space-y-7">
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.08] border border-white/20 text-xs sm:text-sm font-semibold text-sky-200 backdrop-blur-md shadow-inner">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span>Konsultasi Teknis &amp; Estimasi Kebutuhan Ruangan Gratis</span>
+        </div>
+
+        <!-- Headline -->
+        <h2 id="cta-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight max-w-3xl mx-auto">
+          Dapatkan Penawaran Resmi Smart Board Hikvision
+        </h2>
+
+        <!-- Paragraph -->
+        <p class="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+          Konsultasikan kebutuhan ukuran layar, ketersediaan unit, faktur PPN resmi, serta kemudahan transaksi pengadaan E-Katalog LKPP bersama tim sales CV Cahaya Mustika.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <a href="https://wa.me/628113301819?text=Halo%20CV%20Cahaya%20Mustika,%20saya%20tertarik%20dengan%20produk%20Smart%20Board%20Hikvision." target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-sm sm:text-base py-4 px-8 sm:px-9 rounded-full shadow-xl shadow-green-950/40 inline-flex items-center gap-3 font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Konsultasi WhatsApp Sekarang</span>
+          </a>
+          <a href="../portofolio/" class="py-4 px-8 sm:px-9 rounded-full bg-white/10 hover:bg-white text-white hover:text-navy font-bold text-sm sm:text-base border border-white/20 hover:border-white transition-all duration-300 inline-flex items-center gap-2.5 backdrop-blur-md shadow-md hover:scale-105">
+            <span>Lihat Hasil Pemasangan</span>
+            <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <!-- 4 Poin Jaminan & Kepercayaan (Trust Badges) -->
+        <div class="pt-8 sm:pt-10 mt-6 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 max-w-4xl mx-auto text-left">
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-sm">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-white leading-tight">Garansi Resmi</div>
+              <div class="text-[11px] sm:text-xs text-slate-300">Unit Baru &amp; Sparepart Asli</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-sm">
+            <div class="w-9 h-9 rounded-lg bg-blue-500/20 text-sky-300 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-white leading-tight">E-Katalog LKPP</div>
+              <div class="text-[11px] sm:text-xs text-slate-300">Resmi LPSE &amp; SIPLah</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-sm">
+            <div class="w-9 h-9 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-white leading-tight">Instalasi Presisi</div>
+              <div class="text-[11px] sm:text-xs text-slate-300">Teknisi Ahli Berpengalaman</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-sm">
+            <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-white leading-tight">Showroom Malang</div>
+              <div class="text-[11px] sm:text-xs text-slate-300">Unit Demo Siap Dicoba</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Contact Quick Chip -->
+        <p class="text-xs text-slate-300 font-body pt-2">
+          Kunjungi showroom kami di Ruko Istana Dinoyo B11, Malang atau hubungi hotline resmi: <strong class="text-white">+62 811-3301-819</strong>
+        </p>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER (Updated: 3 Kolom - Profil, Navigasi Utama, Kontak Kami) -->
@@ -607,7 +703,7 @@
         <!-- Brand Column with Vertical Logo -->
         <div class="lg:col-span-5 space-y-4">
           <a href="../" class="inline-block">
-            <img src="../assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="160" height="96">
+            <img src="../assets/images/cahaya-mustika-logo-vertical.webp" alt="CV Cahaya Mustika Office Equipment Center" class="h-20 sm:h-24 w-auto object-contain" width="101" height="96">
           </a>
           <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-body max-w-sm">
             Jual Smart Board untuk Kebutuhan Bisnis dan Pendidikan.
@@ -616,7 +712,7 @@
 
         <!-- Navigation Links -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Informasi Perusahaan</h4>
+          <h3 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Informasi Perusahaan</h3>
           <ul class="space-y-2.5 text-xs sm:text-sm font-body">
             <li><a href="../" class="hover:text-navy transition font-medium">Beranda</a></li>
             <li><a href="../smart-board-hikvision/" class="hover:text-navy transition font-medium">Produk</a></li>
@@ -628,7 +724,7 @@
 
         <!-- Contact & Address (Hanya Alamat & WhatsApp) -->
         <div class="lg:col-span-4 space-y-4">
-          <h4 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Kontak Kami</h4>
+          <h3 class="font-heading font-bold text-navy-deep text-sm uppercase tracking-wider">Kontak Kami</h3>
           <div class="space-y-3.5 text-xs sm:text-sm text-slate-600 font-body">
             <!-- Alamat -->
             <div class="flex items-start gap-3">
@@ -639,7 +735,7 @@
                 </svg>
               </div>
               <div class="leading-relaxed">
-                <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider">Alamat Showroom &amp; Kantor:</span>
+                <span class="text-xs font-semibold text-slate-600 block uppercase tracking-wider">Alamat Showroom &amp; Kantor:</span>
                 <span class="text-slate-700">Jl. M.T. Haryono, Ruko Istana Dinoyo B11, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</span>
               </div>
             </div>
@@ -653,7 +749,7 @@
                 </svg>
               </div>
               <div class="leading-relaxed">
-                <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider">WhatsApp Resmi:</span>
+                <span class="text-xs font-semibold text-slate-600 block uppercase tracking-wider">WhatsApp Resmi:</span>
                 <a href="https://wa.me/628113301819" target="_blank" rel="noopener noreferrer" class="text-navy hover:text-navy-light font-bold text-sm tracking-wide transition">
                   +62 811-330-1819
                 </a>
@@ -665,7 +761,7 @@
       </div>
 
       <!-- Copyright Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <div>
           &copy; 2026 <strong>CV Cahaya Mustika Office Equipment Center</strong>. Hak Cipta Dilindungi Undang-Undang.
         </div>
