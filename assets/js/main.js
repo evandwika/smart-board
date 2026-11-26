@@ -50,7 +50,7 @@ function initNavbar() {
       navTicking = true;
     }
   }, { passive: true });
-  updateNavbar();
+  window.requestAnimationFrame(updateNavbar);
 
   if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {
@@ -917,7 +917,7 @@ function initSeriesNavScrollSpy() {
       spyTicking = true;
     }
   }, { passive: true });
-  updateActivePill();
+  window.requestAnimationFrame(updateActivePill);
 }
 
 // -------------------------------------------------------------
@@ -932,38 +932,6 @@ function initScrollReveal() {
   );
 
   if (!targets.length) return;
-
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const parents = new Set();
-
-  targets.forEach(target => {
-    target.classList.add('scroll-reveal');
-
-    // Jika elemen sudah berada dalam viewport pada initial load, tampilkan langsung tanpa delay
-    const rect = target.getBoundingClientRect();
-    if (rect.top < windowHeight * 0.95 && rect.bottom > 0) {
-      target.classList.add('is-revealed');
-      target.classList.add('reveal-completed');
-      return;
-    }
-
-    if (target.parentElement) {
-      parents.add(target.parentElement);
-    }
-  });
-
-  // Hitung stagger cascade delay berirama halus untuk elemen sejajar dalam satu grid/flex
-  parents.forEach(parent => {
-    const children = parent.querySelectorAll(':scope > .scroll-reveal:not(.is-revealed)');
-    if (children.length > 1 && children.length <= 8) {
-      children.forEach((child, idx) => {
-        const delay = Math.min((idx % 4) * 75, 225);
-        if (delay > 0) {
-          child.style.transitionDelay = `${delay}ms`;
-        }
-      });
-    }
-  });
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -986,14 +954,14 @@ function initScrollReveal() {
     });
   }, {
     root: null,
-    rootMargin: '0px 0px 40px 0px', // Mulai meluncur halus sebelum melewati tepi bawah layar
+    rootMargin: '0px 0px 40px 0px',
     threshold: 0.05
   });
 
+  // Batch class additions and observe targets without forced synchronous layout (getBoundingClientRect)
   targets.forEach(target => {
-    if (!target.classList.contains('is-revealed')) {
-      observer.observe(target);
-    }
+    target.classList.add('scroll-reveal');
+    observer.observe(target);
   });
 }
 

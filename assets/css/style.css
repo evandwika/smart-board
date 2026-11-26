@@ -6,6 +6,25 @@
    - Color Theme: Light Theme (Soft Gray & Navy Blue)
    ========================================================================== */
 
+/* Typography Fallbacks with Metric Overrides to Eliminate Cumulative Layout Shift (CLS) */
+@font-face {
+  font-family: 'Plus Jakarta Sans Fallback';
+  src: local('Segoe UI'), local('Arial');
+  ascent-override: 98%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Segoe UI'), local('Arial');
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
+
 :root {
   /* Color Palette */
   --color-navy: #002B9A;
@@ -32,8 +51,8 @@
   --color-gold: #D97706;
 
   /* Typography */
-  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Poppins', 'Poppins Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Transitions & Shadows */
   --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -76,6 +95,21 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
+}
+
+/* Ensure text-white on headings and brand hero titles always stays pure white */
+.text-white,
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+.font-heading.text-white,
+#hero-section h1,
+#brand-hero-section h1,
+#hikvision-hero-title,
+#samsung-hero-title,
+#zelt-hero-title {
+  color: #FFFFFF !important;
 }
 
 p, span, a, li, input, textarea, button, select, label {
@@ -483,9 +517,58 @@ p, span, a, li, input, textarea, button, select, label {
 }
 
 /* ==========================================================================
-   PERFORMANCE & CLS STABILIZATION (Lighthouse Core Web Vitals)
+   PERFORMANCE, ACCESSIBILITY & RESPONSIVE PERFECTION
    ========================================================================== */
 #hero-title {
   min-height: 2.36em;
   font-display: swap;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive,
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Mobile Touch Target Standards (WCAG 2.1 Level AA >= 44x44px) */
+@media (max-width: 768px) {
+  .btn-navy,
+  .btn-whatsapp,
+  .btn-secondary,
+  #mobileMenuToggle,
+  #mobileMenuBtn,
+  .faq-toggle-btn {
+    min-height: 44px;
+  }
+
+  /* Prevent text crowding on small screens (<380px) */
+  .container,
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Bento Grid Mobile Readability: ensure caption overlay has solid contrast */
+  .portfolio-bento-card .bento-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.6) 45%, rgba(5, 19, 54, 0.96) 100%);
+  }
+
+  /* Series sticky nav smooth horizontal swiping */
+  #series-nav-bar {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #series-nav-bar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Desktop High-Resolution Tweaks */
+@media (min-width: 1280px) {
+  .hero-container {
+    max-width: 1280px;
+  }
 }
